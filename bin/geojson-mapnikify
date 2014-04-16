@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var generateXML = require('../'),
+    fs = require('fs');
+
+var TMP = '/tmp/tl-overlay';
+var gj = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+var gen = generateXML(gj, TMP);
+
+process.stdout.write(gen.xml);
+process.stderr.write(JSON.stringify(gen.resources));
