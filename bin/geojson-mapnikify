@@ -5,6 +5,7 @@ var generateXML = require('../'),
 
 var TMP = '/tmp/tl-overlay';
 var gj = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+var retina = !!process.argv[3];
 var gen = generateXML(gj, TMP);
 
 process.stdout.write(gen.xml);

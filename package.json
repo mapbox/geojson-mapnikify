@@ -6,6 +6,9 @@
   "scripts": {
     "test": "tap test/*.js"
   },
+  "bin": {
+    "geojson-mapnikify": "./bin/geojson-mapnikify"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/mapbox/geojson-mapnikify.git"

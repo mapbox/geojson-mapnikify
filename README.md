@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mapbox/geojson-mapnikify.svg)](https://travis-ci.org/mapbox/geojson-mapnikify)
+
 # geojson-mapnikify
 
 Transform [GeoJSON](http://geojson.org/) objects into [Mapnik](http://mapnik.org/)
