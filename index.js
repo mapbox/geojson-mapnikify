@@ -1,12 +1,8 @@
 var normalize = require('geojson-normalize'),
     strxml = require('strxml'),
-    xtend = require('xtend');
-
-var PROJ = "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-    WGS84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-    HEADER = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<Map srs="' + PROJ + '">',
-    FOOTER = '</Map>';
+    xtend = require('xtend'),
+    typedDefaults = require('./defaults');
+    constants = require('./constants');
 
 var tagClose = strxml.tagClose,
     tag = strxml.tag;
@@ -19,24 +15,6 @@ var styleMap = {
     'fill-opacity': ['PolygonSymbolizer', 'fill-opacity']
 };
 
-var defaultFilled = {
-    fill: '#555555',
-    'fill-opacity': 0.6
-};
-
-var defaultStroked = {
-    stroke: '#555555',
-    'stroke-width': 2,
-    'stroke-opacity': 1,
-};
-
-var typedDefaults = {
-    LineString: defaultStroked,
-    MultiLineString: defaultStroked,
-    Polygon: defaultFilled,
-    MultiPolygon: defaultFilled
-};
-
 /**
  * @param {object} data a geojson object
  * @returns {string} a mapnik style
@@ -47,10 +25,10 @@ module.exports = function generateXML(data, TMP, retina) {
     var ls = gj.features.map(convertFeature(TMP, retina));
 
     return {
-        xml: HEADER +
+        xml: constants.HEADER +
             ls.map(function(_) { return _.style; }).join('') +
             ls.map(function(_) { return _.layer; }).join('') +
-            FOOTER,
+            constants.FOOTER,
         resources: ls.reduce(function(mem, _) {
             return mem.concat(_.resources);
         }, [])
@@ -178,7 +156,7 @@ function generateLayer(feature, i) {
                 return tag('Parameter', a[1], [['name', a[0]]]);
             }).join('')), [
                 ['name', 'layer-' + i],
-                ['srs', WGS84]
+                ['srs', constants.WGS84]
             ]);
 }
 
