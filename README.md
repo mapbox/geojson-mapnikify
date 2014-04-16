@@ -35,18 +35,10 @@ $ geojson-mapnikify test/data/point-retina.geojson > stylesheet.xml
 $ geojson-mapnikify test/data/point-retina.geojson retina > stylesheet-retina.xml
 ```
 
-### `mapnikify(geojson, TMP, retina) -> { xml: stylesheet, resources: [] }`
+### `mapnikify(geojson, retina, callback)`
 
 Transform GeoJSON into Mapnik XML.
 
-#### Input
-
 * `geojson` is a GeoJSON object.
-* `TMP` is a tmp directory path for marker resources
 * `retina` is true or false for whether the style should be optimized for 2x rendering.
-
-#### Output
-
-* `xml` is the stylesheet
-* `resources` is a list of paths of marker icons that are expected to be downloaded
-  by another process
+* `callback` called with `(err, xml)` where xml is a string
