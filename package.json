@@ -28,7 +28,10 @@
   "dependencies": {
     "xtend": "~3.0.0",
     "strxml": "0.0.0",
-    "geojson-normalize": "0.0.0"
+    "geojson-normalize": "0.0.0",
+    "queue-async": "~1.0.7",
+    "agentkeepalive": "~0.2.2",
+    "request": "~2.34.0"
   },
   "devDependencies": {
     "tap": "~0.4.8"

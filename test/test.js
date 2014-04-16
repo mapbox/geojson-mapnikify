@@ -1,18 +1,17 @@
 var test = require('tap').test,
     fs = require('fs'),
-    os = require('os'),
     generatexml = require('../');
 
-var TMP = '/tmp/tl-overlay';
-
-try {
-    fs.mkdirSync(TMP);
-} catch(e) { }
-
 function generates(t, retina, name) {
-    t.equal(
-        generatexml(JSON.parse(fs.readFileSync(__dirname + '/data/' + name + '.geojson')), TMP).xml,
-            fs.readFileSync(__dirname + '/data/' + name + '.xml', 'utf8'), name);
+    t.test(name, function(t) {
+        generatexml(JSON.parse(fs.readFileSync(__dirname + '/data/' + name + '.geojson')), false, function(err, xml) {
+            t.equal(err, null, 'no error returned');
+            t.pass('is generated');
+            // t.equal(xml,
+            //     fs.readFileSync(__dirname + '/data/' + name + '.xml', 'utf8'), name);
+            t.end();
+        });
+    });
 }
 
 test('generatexml', function(t) {

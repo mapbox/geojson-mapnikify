@@ -1,8 +1,14 @@
 var normalize = require('geojson-normalize'),
     strxml = require('strxml'),
     xtend = require('xtend'),
-    typedDefaults = require('./defaults');
-    constants = require('./constants');
+    makizushi = require('makizushi'),
+    queue = require('queue-async'),
+    typedDefaults = require('./lib/defaults'),
+    cachepath = require('./lib/cachepath'),
+    loadURL = require('./lib/urlmarker'),
+    path = require('path'),
+    fs = require('fs'),
+    constants = require('./lib/constants');
 
 var tagClose = strxml.tagClose,
     tag = strxml.tag;
@@ -19,33 +25,55 @@ var styleMap = {
  * @param {object} data a geojson object
  * @returns {string} a mapnik style
  */
-module.exports = function generateXML(data, TMP, retina) {
+module.exports = function generateXML(data, retina, callback) {
     var gj = normalize(data);
     if (!gj) return null;
-    var ls = gj.features.map(convertFeature(TMP, retina));
 
-    return {
-        xml: constants.HEADER +
-            ls.map(function(_) { return _.style; }).join('') +
-            ls.map(function(_) { return _.layer; }).join('') +
-            constants.FOOTER,
-        resources: ls.reduce(function(mem, _) {
-            return mem.concat(_.resources);
-        }, [])
-    };
+    var q = queue(1);
+
+    gj.features.forEach(function(feat, i) {
+        q.defer(convertFeature, feat, retina, i);
+    });
+
+    q.awaitAll(done);
+
+    function done(err, ls) {
+        if (err) return callback(err);
+        return callback(null, constants.HEADER +
+            ls.map(function(_) { return _.style; }).join('\n') +
+            ls.map(function(_) { return _.layer; }).join('\n') +
+            constants.FOOTER);
+    }
 };
 
 /**
  * @param {object} feature
  * @returns {string}
  */
-function markerString(feature, retina) {
+function getMarker(feature, retina, callback) {
     var fp = feature.properties || {},
-        size = fp['marker-size'] || 'medium',
-        symbol = (fp['marker-symbol']) ? '-' + fp['marker-symbol'] : '',
+        size = (fp['marker-size'] || 'm')[0],
+        symbol = (fp['marker-symbol']) ? fp['marker-symbol'] : '',
         color = (fp['marker-color'] || '7e7e7e').replace('#', '');
 
-    return 'pin-' + size.charAt(0) + symbol + '+' + color + (retina ? '@2x' : '');
+    var options = {
+        tint: color,
+        base: 'pin',
+        symbol: symbol,
+        size: size
+    };
+
+    var path = cachepath(JSON.stringify(options)) + '.png';
+
+    makizushi(options, rendered);
+    function rendered(err, data) {
+        if (err) return callback(err);
+        fs.writeFile(path, data, written);
+    }
+    function written(err) {
+        if (err) return callback(err);
+        else callback(null, path);
+    }
 }
 
 /**
@@ -60,36 +88,24 @@ function markerURL(feature) {
  * @param {object} feature geojson feature
  * @returns {object}
  */
-function convertFeature(TMP, retina) {
-    return function(feature, i) {
-        var style = generateStyle(feature, i, TMP, retina);
-        return {
-            style: style.style,
-            resources: style.resources,
+function convertFeature(feature, retina, i, callback) {
+    generateStyle(feature, i, retina, styled);
+
+    function styled(err, style) {
+        if (err) return callback(err);
+        return callback(null, {
+            style: style,
             layer: generateLayer(feature, i)
-        };
-    };
+        });
+    }
 }
 
-/**
- * @param {object} a
- * @param {object} b
- * @returns {object}
- */
-function fallback(a, b) {
-    var c = {};
-    for (var k in b) {
-        if (a[k] === undefined) c[k] = b[k];
-        else c[k] = a[k];
-    }
-    return c;
-}
 
 /**
  * @param {object} feature geojson feature
  * @returns {string}
  */
-function generateStyle(feature, i, TMP, retina) {
+function generateStyle(feature, i, retina, callback) {
     var defaults = typedDefaults[feature.geometry.type] || {},
         props = pairs(xtend({}, defaults, feature.properties || {})),
         symbolizerGroups = props.reduce(collectSymbolizers, {}),
@@ -99,28 +115,33 @@ function generateStyle(feature, i, TMP, retina) {
     if (feature.geometry.type === 'Point' ||
         feature.geometry.type === 'MultiPoint') {
         if (markerURL(feature)) {
-            resources.push(markerURL(feature));
-            markerStyle = tagClose('PointSymbolizer', [
-                ['file', TMP + markerString(feature)]
-            ]);
+            loadURL(feature, function(err, path) {
+                if (err) return callback(err);
+                callback(null, makeStyle(tagClose('PointSymbolizer', [
+                    ['file', path]
+                ])));
+            });
         } else {
-            resources.push(markerString(feature, retina));
-            markerStyle = tagClose('PointSymbolizer', [
-                ['file', TMP + '/' + markerString(feature, retina) + '.png']
-            ]);
+            getMarker(feature, retina, function(err, path) {
+                if (err) return callback(err);
+                callback(null, makeStyle(tagClose('PointSymbolizer', [
+                    ['file', path]
+                ])));
+            });
         }
+    } else {
+        return callback(null, makeStyle(''));
     }
 
-    return {
-        style: tag('Style',
+    function makeStyle(markerString) {
+        return tag('Style',
             tag('Rule',
             pairs(symbolizerGroups)
                 .map(function(symbolizer) {
                     return tagClose(symbolizer[0], pairs(symbolizer[1]));
                 }).join('') + markerStyle),
-                [['name', 'style-' + i]]),
-        resources: resources
-    };
+                [['name', 'style-' + i]]);
+    }
 }
 
 /**
@@ -143,7 +164,6 @@ function collectSymbolizers(mem, prop) {
  */
 function generateLayer(feature, i) {
     if (!feature.geometry) return null;
-
     return tag('Layer',
         tag('StyleName', 'style-' + i) +
         tag('Datasource',
