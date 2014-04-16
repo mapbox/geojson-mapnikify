@@ -60,6 +60,7 @@ function getMarker(feature, retina, callback) {
         tint: color,
         base: 'pin',
         symbol: symbol,
+        retina: retina,
         size: size
     };
 
@@ -110,6 +111,13 @@ function generateStyle(feature, i, retina, callback) {
         props = pairs(xtend({}, defaults, feature.properties || {})),
         symbolizerGroups = props.reduce(collectSymbolizers, {}),
         resources = [];
+
+    if (retina &&
+        symbolizerGroups.LineSymbolizer &&
+        symbolizerGroups.LineSymbolizer['stroke-width']) {
+        symbolizerGroups.LineSymbolizer['stroke-width'] *= 2;
+    }
+
 
     if (feature.geometry.type === 'Point' ||
         feature.geometry.type === 'MultiPoint') {

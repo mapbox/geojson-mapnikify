@@ -32,7 +32,7 @@
     "queue-async": "~1.0.7",
     "agentkeepalive": "~0.2.2",
     "request": "~2.34.0",
-    "makizushi": "0.0.2"
+    "makizushi": "0.0.3"
   },
   "devDependencies": {
     "tap": "~0.4.8"
