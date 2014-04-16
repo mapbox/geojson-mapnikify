@@ -109,17 +109,20 @@ function generateStyle(feature, i, retina, callback) {
     var defaults = typedDefaults[feature.geometry.type] || {},
         props = pairs(xtend({}, defaults, feature.properties || {})),
         symbolizerGroups = props.reduce(collectSymbolizers, {}),
-        markerStyle = '',
         resources = [];
 
     if (feature.geometry.type === 'Point' ||
         feature.geometry.type === 'MultiPoint') {
         if (markerURL(feature)) {
-            loadURL(feature, function(err, path) {
+            loadURL(feature, function urlLoaded(err, data) {
                 if (err) return callback(err);
-                callback(null, makeStyle(tagClose('PointSymbolizer', [
-                    ['file', path]
-                ])));
+                var path = cachepath(markerURL(feature)) + '.png';
+                fs.writeFile(path, data, function written(err) {
+                    if (err) return callback(err);
+                    callback(null, makeStyle(tagClose('PointSymbolizer', [
+                        ['file', path]
+                    ])));
+                });
             });
         } else {
             getMarker(feature, retina, function(err, path) {
@@ -139,7 +142,7 @@ function generateStyle(feature, i, retina, callback) {
             pairs(symbolizerGroups)
                 .map(function(symbolizer) {
                     return tagClose(symbolizer[0], pairs(symbolizer[1]));
-                }).join('') + markerStyle),
+                }).join('\n') + markerString),
                 [['name', 'style-' + i]]);
     }
 }
@@ -174,7 +177,7 @@ function generateLayer(feature, i) {
                 ['string', JSON.stringify(feature.geometry)]
             ].map(function(a) {
                 return tag('Parameter', a[1], [['name', a[0]]]);
-            }).join('')), [
+            }).join('\n')), [
                 ['name', 'layer-' + i],
                 ['srs', constants.WGS84]
             ]);
