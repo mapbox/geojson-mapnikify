@@ -118,7 +118,6 @@ function generateStyle(feature, i, retina, callback) {
         symbolizerGroups.LineSymbolizer['stroke-width'] *= 2;
     }
 
-
     if (feature.geometry.type === 'Point' ||
         feature.geometry.type === 'MultiPoint') {
         if (markerURL(feature)) {
@@ -150,6 +149,11 @@ function generateStyle(feature, i, retina, callback) {
         return tag('Style',
             tag('Rule',
             pairs(symbolizerGroups)
+                .sort(function(symbolizer) {
+                    if (symbolizer[0] === 'PointSymbolizer') return 0;
+                    if (symbolizer[0] === 'LineSymbolizer') return 1;
+                    if (symbolizer[0] === 'PolygonSymbolizer') return 2;
+                })
                 .map(function(symbolizer) {
                     return tagClose(symbolizer[0], pairs(symbolizer[1]));
                 }).join('\n') + markerString),

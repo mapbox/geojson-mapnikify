@@ -24,5 +24,6 @@ test('generatexml', function(t) {
     generates(t, false, 'point');
     generates(t, true, 'point-retina');
     generates(t, true, 'example-retina');
+    generates(t, false, 'stroked');
     t.end();
 });
