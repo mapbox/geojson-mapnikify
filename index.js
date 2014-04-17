@@ -128,7 +128,8 @@ function generateStyle(feature, i, retina, callback) {
                 fs.writeFile(path, data, function written(err) {
                     if (err) return callback(err);
                     callback(null, makeStyle(tagClose('PointSymbolizer', [
-                        ['file', path]
+                        ['file', path],
+                        ['allow-overlap', 'true']
                     ])));
                 });
             });
@@ -136,7 +137,8 @@ function generateStyle(feature, i, retina, callback) {
             getMarker(feature, retina, function(err, path) {
                 if (err) return callback(err);
                 callback(null, makeStyle(tagClose('PointSymbolizer', [
-                    ['file', path]
+                    ['file', path],
+                    ['allow-overlap', 'true']
                 ])));
             });
         }

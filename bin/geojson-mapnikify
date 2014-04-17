@@ -1,16 +1,26 @@
 #!/usr/bin/env node
 
 var generateXML = require('../'),
+    argv = require('minimist')(process.argv.slice(2), {
+        boolean: ['retina', 'normalize']
+    }),
     fs = require('fs');
 
-if (process.argv.length < 3) {
-    return console.error('usage: geojson-mapnikify file.geojson [retina] > stylesheet.xml');
+if (!argv._.length) {
+    return console.error('usage: geojson-mapnikify file.geojson [--retina] [--retina] > stylesheet.xml');
 }
 
 var TMP = '/tmp/tl-overlay';
-var gj = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
-var retina = !!process.argv[3];
-var gen = generateXML(gj, retina, function(err, res) {
+var gj = JSON.parse(fs.readFileSync(argv._[0], 'utf8'));
+var gen = generateXML(gj, argv.retina, function(err, res) {
     if (err) return console.error(err);
-    process.stdout.write(res);
+    if (argv.normalize) {
+        process.stdout.write(normalize(res));
+    } else {
+        process.stdout.write(res);
+    }
 });
+
+function normalize(_) {
+    return _.replace(/file="([^\"])+"/g, 'file="TMP"');
+}
