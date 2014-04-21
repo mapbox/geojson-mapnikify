@@ -66,7 +66,14 @@ function getMarker(feature, retina, callback) {
 
     var path = cachepath(JSON.stringify(options)) + '.png';
 
-    makizushi(options, rendered);
+    fs.exists(path, function(exists) {
+        if (exists) {
+            return callback(null, path);
+        } else {
+            makizushi(options, rendered);
+        }
+    });
+
     function rendered(err, data) {
         if (err) return callback(err);
         fs.writeFile(path, data, written);
@@ -121,17 +128,28 @@ function generateStyle(feature, i, retina, callback) {
     if (feature.geometry.type === 'Point' ||
         feature.geometry.type === 'MultiPoint') {
         if (markerURL(feature)) {
-            loadURL(feature, function urlLoaded(err, data) {
+
+            var path = cachepath(markerURL(feature)) + '.png';
+
+            var written = function(err) {
                 if (err) return callback(err);
-                var path = cachepath(markerURL(feature)) + '.png';
-                fs.writeFile(path, data, function written(err) {
-                    if (err) return callback(err);
-                    callback(null, makeStyle(tagClose('PointSymbolizer', [
-                        ['file', path],
-                        ['allow-overlap', 'true']
-                    ])));
-                });
+                callback(null, makeStyle(tagClose('PointSymbolizer', [
+                    ['file', path],
+                    ['allow-overlap', 'true']
+                ])));
+            };
+
+            fs.exists(path, function(exists) {
+                if (exists) {
+                    return written(null);
+                } else {
+                    loadURL(feature, function urlLoaded(err, data) {
+                        if (err) return callback(err);
+                        fs.writeFile(path, data, written);
+                    });
+                }
             });
+
         } else {
             getMarker(feature, retina, function(err, path) {
                 if (err) return callback(err);
