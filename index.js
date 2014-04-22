@@ -203,10 +203,8 @@ function generateLayer(feature, i) {
         tag('StyleName', 'style-' + i) +
         tag('Datasource',
             [
-                ['type', 'ogr'],
-                ['layer_by_index', '0'],
-                ['driver', 'GeoJson'],
-                ['string', JSON.stringify(feature.geometry)]
+                ['type', 'csv'],
+                ['inline', "geojson\n'" + JSON.stringify(feature.geometry) + "'"]
             ].map(function(a) {
                 return tag('Parameter', a[1], [['name', a[0]]]);
             }).join('\n')), [
