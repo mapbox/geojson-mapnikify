@@ -13,7 +13,7 @@ function generates(t, retina, name) {
             t.pass('is generated');
             t.equal(
                 normalize(xml),
-                normalize(fs.readFileSync(__dirname + '/data/' + name + '.xml', 'utf8'), name));
+                normalize(fs.readFileSync(__dirname + '/data/' + name + '.xml', 'utf8')), name);
             t.end();
         });
     });
