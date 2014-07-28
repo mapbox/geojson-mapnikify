@@ -135,7 +135,8 @@ function generateStyle(feature, i, retina, callback) {
                 if (err) return callback(err);
                 callback(null, makeStyle(tagClose('PointSymbolizer', [
                     ['file', path],
-                    ['allow-overlap', 'true']
+                    ['allow-overlap', 'true'],
+                    ['ignore-placement', 'true']
                 ])));
             };
 
@@ -155,7 +156,8 @@ function generateStyle(feature, i, retina, callback) {
                 if (err) return callback(err);
                 callback(null, makeStyle(tagClose('PointSymbolizer', [
                     ['file', path],
-                    ['allow-overlap', 'true']
+                    ['allow-overlap', 'true'],
+                    ['ignore-placement', 'true']
                 ])));
             });
         }
