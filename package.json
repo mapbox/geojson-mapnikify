@@ -4,7 +4,8 @@
   "description": "transform geojson with simplestyle-spec into mapnik xml",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "cover": "istanbul ./node_modules/.bin/tap test/*.js && coveralls < ./coverage/lcov.info"
   },
   "bin": {
     "geojson-mapnikify": "./bin/geojson-mapnikify"
@@ -36,6 +37,8 @@
     "minimist": "0.0.8"
   },
   "devDependencies": {
-    "tap": "~0.4.8"
+    "tap": "~0.4.8",
+    "coveralls": "~2.11.1",
+    "istanbul": "~0.3.0"
   }
 }

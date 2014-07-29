@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mapbox/geojson-mapnikify.svg)](https://travis-ci.org/mapbox/geojson-mapnikify)
+[![Build Status](https://travis-ci.org/mapbox/geojson-mapnikify.svg)](https://travis-ci.org/mapbox/geojson-mapnikify) [![Coverage Status](https://coveralls.io/repos/mapbox/geojson-mapnikify/badge.png)](https://coveralls.io/r/mapbox/geojson-mapnikify)
 
 # geojson-mapnikify
 
