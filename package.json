@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tap test/*.js",
-    "cover": "istanbul test/test.js && coveralls < ./coverage/lcov.info"
+    "cover": "istanbul cover test/test.js && coveralls < ./coverage/lcov.info"
   },
   "bin": {
     "geojson-mapnikify": "./bin/geojson-mapnikify"
@@ -34,7 +34,8 @@
     "agentkeepalive": "~0.2.2",
     "request": "~2.34.0",
     "makizushi": "0.0.3",
-    "minimist": "0.0.8"
+    "minimist": "0.0.8",
+    "sigmund": "~1.0.0"
   },
   "devDependencies": {
     "tap": "~0.4.8",
