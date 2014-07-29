@@ -27,7 +27,7 @@ var styleMap = {
  */
 module.exports = function generateXML(data, retina, callback) {
     var gj = normalize(data);
-    if (!gj) return null;
+    if (!gj) return callback(new Error('invalid GeoJSON'));
 
     var q = queue(1);
 
@@ -114,6 +114,7 @@ function convertFeature(feature, retina, i, callback) {
  * @returns {string}
  */
 function generateStyle(feature, i, retina, callback) {
+    if (!feature.geometry) return callback(null, '');
     var defaults = typedDefaults[feature.geometry.type] || {},
         props = pairs(xtend({}, defaults, feature.properties || {})),
         symbolizerGroups = props.reduce(collectSymbolizers, {}),
