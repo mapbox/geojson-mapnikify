@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tap test/*.js",
-    "cover": "istanbul ./node_modules/.bin/tap test/*.js && coveralls < ./coverage/lcov.info"
+    "cover": "istanbul test/test.js && coveralls < ./coverage/lcov.info"
   },
   "bin": {
     "geojson-mapnikify": "./bin/geojson-mapnikify"
