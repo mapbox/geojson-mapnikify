@@ -41,6 +41,6 @@
     "tap": "~0.4.8",
     "coveralls": "~2.11.1",
     "istanbul": "~0.3.0",
-    "mapnik":"~1.4.13"
+    "mapnik":"https://github.com/mapnik/node-mapnik/tarball/mapnik3"
   }
 }
