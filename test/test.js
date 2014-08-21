@@ -30,6 +30,7 @@ test('generatexml', function(t) {
     generates(t, true, 'point-retina');
     generates(t, true, 'dedup');
     generates(t, true, 'point-retina');
+    generates(t, true, 'url-marker');
     generates(t, true, 'example-retina');
     generates(t, true, 'feature-nullgeom');
     generates(t, true, 'feature-nullproperties');

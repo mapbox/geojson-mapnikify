@@ -1,1 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"></Map>
+<Map srs="+init=epsg:3857">
+    <Style name="geoms">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=linestring</Filter>
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
+            <PolygonSymbolizer fill="[fill]"/>
+        </Rule>
+    </Style>
+    <Style name="points" filter-mode="first">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point and [marker-symbol]</Filter>
+            <MarkersSymbolizer
+              file="../node_modules/makizushi/node_modules/maki/src/marker-24.svg"
+              width="80"
+              stroke="[marker-color]"
+              stroke-opacity=".7"
+              transform="translate(0,-35)"
+              fill="[marker-color]"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+            <MarkersSymbolizer
+              file="../node_modules/makizushi/node_modules/maki/src/[marker-symbol]-24.svg"
+              stroke="black"
+              fill="white"
+              width="22"
+              transform="translate(2,-42)"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point</Filter>
+            <MarkersSymbolizer
+              file="../node_modules/makizushi/node_modules/maki/src/marker-24.svg"
+              width="80"
+              stroke-opacity=".7"
+              stroke="black"
+              transform="translate(0,-35)"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+    </Style>
+    <Layer name="layer" srs="+init=epsg:4326">
+        <StyleName>geoms</StyleName>
+        <StyleName>points</StyleName>
+        <Datasource>
+            <Parameter name="type">geojson</Parameter>
+            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":null,"properties":{"name":"Dinagat Islands"}}]}</Parameter>
+        </Datasource>
+    </Layer>
+</Map>
