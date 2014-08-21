@@ -42,7 +42,7 @@ function getRemote(feature, retina, callback) {
 
     var written = function(err) {
         if (err) return callback(err);
-        feature.properties.urlmarker = path;
+        feature.properties['marker-path'] = path;
         callback(null, path);
     };
 
@@ -76,6 +76,7 @@ function getMarker(feature, retina, callback) {
 
     fs.exists(path, function(exists) {
         if (exists) {
+            feature.properties['marker-path'] = path;
             return callback(null, path);
         } else {
             makizushi(options, rendered);
@@ -88,8 +89,12 @@ function getMarker(feature, retina, callback) {
     }
 
     function written(err) {
-        if (err) return callback(err);
-        else callback(null, path);
+        if (err) {
+            return callback(err);
+        } else {
+            feature.properties['marker-path'] = path;
+            callback(null, path);
+        }
     }
 }
 

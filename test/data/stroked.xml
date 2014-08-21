@@ -11,35 +11,10 @@
     </Style>
     <Style name="points" filter-mode="first">
         <Rule>
-            <Filter>[mapnik::geometry_type]=point and [marker-symbol]</Filter>
+            <Filter>[mapnik::geometry_type]=point and [marker-path]</Filter>
             <MarkersSymbolizer
-              file="../node_modules/makizushi/node_modules/maki/src/marker-24.svg"
+              file="[marker-path]"
               width="80"
-              stroke="[marker-color]"
-              stroke-opacity=".7"
-              transform="translate(0,-35)"
-              fill="[marker-color]"
-              allow-overlap="true"
-              ignore-placement="true"
-            />
-            <MarkersSymbolizer
-              file="../node_modules/makizushi/node_modules/maki/src/[marker-symbol]-24.svg"
-              stroke="black"
-              fill="white"
-              width="22"
-              transform="translate(2,-42)"
-              allow-overlap="true"
-              ignore-placement="true"
-            />
-        </Rule>
-        <Rule>
-            <Filter>[mapnik::geometry_type]=point</Filter>
-            <MarkersSymbolizer
-              file="../node_modules/makizushi/node_modules/maki/src/marker-24.svg"
-              width="80"
-              stroke-opacity=".7"
-              stroke="black"
-              transform="translate(0,-35)"
               allow-overlap="true"
               ignore-placement="true"
             />
@@ -50,7 +25,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"marker-fill":"7e7e7e","marker-size":"medium","symbol":"-","marker-symbol":"bus","marker-color":"#ace"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[10,10]]},"properties":{"stroke":"#f0f0f0","stroke-width":2,"stroke-opacity":1,"fill":"#7e7e7e"}}]}</Parameter>
+            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"marker-fill":"7e7e7e","marker-size":"medium","symbol":"-","marker-symbol":"bus","marker-color":"#ace","marker-path":"/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/73c52cc1d5ce4d4cb149a80c09d6a9db.png"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[10,10]]},"properties":{"stroke":"#f0f0f0","stroke-width":2,"stroke-opacity":1,"fill":"#7e7e7e"}}]}</Parameter>
         </Datasource>
     </Layer>
 </Map>
