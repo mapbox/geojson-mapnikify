@@ -1,0 +1,56 @@
+<Map srs="+init=epsg:3857">
+    <Style name="geoms">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=linestring</Filter>
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
+            <PolygonSymbolizer fill="[fill]"/>
+        </Rule>
+    </Style>
+    <Style name="points" filter-mode="first">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point and [marker-symbol]</Filter>
+            <MarkersSymbolizer
+              file="../node_modules/makizushi/node_modules/maki/src/marker-24.svg"
+              width="80"
+              stroke="[marker-color]"
+              stroke-opacity=".7"
+              transform="translate(0,-35)"
+              fill="[marker-color]"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+            <MarkersSymbolizer
+              file="../node_modules/makizushi/node_modules/maki/src/[marker-symbol]-24.svg"
+              stroke="black"
+              fill="white"
+              width="22"
+              transform="translate(2,-42)"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point</Filter>
+            <MarkersSymbolizer
+              file="../node_modules/makizushi/node_modules/maki/src/marker-24.svg"
+              width="80"
+              stroke-opacity=".7"
+              stroke="black"
+              transform="translate(0,-35)"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+    </Style>
+    <Layer name="layer" srs="+init=epsg:4326">
+        <StyleName>geoms</StyleName>
+        <StyleName>points</StyleName>
+        <Datasource>
+            <Parameter name="type">geojson</Parameter>
+            <Parameter name="file">{{geojson}}</Parameter>
+        </Datasource>
+    </Layer>    
+</Map>

@@ -29,6 +29,28 @@ function render(xml, cb) {
     });
 }
 
+
+// Use Mapnik 3.x features to render with minimal xml
+function render3(geojson,opts,cb) {
+    var map = new mapnik.Map(600,400);
+    var im = new mapnik.Image(map.width,map.height);
+    var template_xml = fs.readFileSync(__dirname + '/data/template.xml').toString("utf-8");
+    template_xml = template_xml.replace('{{geojson}}',geojson);
+    map.fromString(template_xml, {strict:true}, function(err,map) {
+        if (err) return cb(err);
+        try {
+            map.zoomAll();
+            var e = map.extent;
+            // inflate bbox slightly in order to show single points
+            var pad = 1;
+            map.extent = [e[0]-pad,e[1]-pad,e[2]+pad,e[3]+pad];
+            map.render(im,opts,cb);
+        } catch (err) {
+            return cb(err);
+        }
+    });
+}
+
 function generates(t, retina, name) {
     t.test(name, function(t) {
         var file_path = __dirname + '/data/' + name + '.geojson';
@@ -41,14 +63,28 @@ function generates(t, retina, name) {
             t.equal(
                 normalize(xml),
                 normalize(fs.readFileSync(__dirname + '/data/' + name + '.xml', 'utf8')), name);
-            render(xml,function(err,im) {
+            render(xml, function(err,im) {
                 var expected_image = file_path + '.png';
                 if (process.env.UPDATE) {
-                    fs.writeFileSync(__dirname + '/data/' + name + '.xml', xml);
                     im.save(expected_image,"png32");
                 }
                 t.equal(0,im.compare(new mapnik.Image.open(expected_image)));
-                t.end();
+                var opts = {};
+                if (file_path.indexOf('retina') > -1) {
+                    // TODO - pass 2x for retina?
+                    // will need to adapt template
+                    // or just replace `marker-size` with actual pixels
+                    //opts.scale = 2;
+                }
+                render3(file_path, opts, function(err,im2) {
+                    if (err) throw err;
+                    var expected_image2 = file_path + '2.png';
+                    if (process.env.UPDATE) {
+                        im2.save(expected_image2,"png32");
+                    }
+                    t.equal(0,im2.compare(new mapnik.Image.open(expected_image2)));
+                    t.end();
+                })
             });
         });
     });
