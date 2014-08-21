@@ -38,7 +38,7 @@ function render3(geojson,opts,cb) {
     var im = new mapnik.Image(map.width,map.height);
     var template_xml = fs.readFileSync(__dirname + '/data/template.xml').toString("utf-8");
     template_xml = template_xml.replace('{{geojson}}',geojson);
-    map.fromString(template_xml, {strict:true}, function(err,map) {
+    map.fromString(template_xml, {strict:true, base:__dirname}, function(err,map) {
         if (err) return cb(err);
         try {
             map.zoomAll();
