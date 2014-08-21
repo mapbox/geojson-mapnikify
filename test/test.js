@@ -5,7 +5,7 @@ var test = require('tap').test,
     generatexml = require('../');
 
 function normalize(_) {
-    return _.replace(/file="([^\"])+"/g, 'file="TMP"');
+    return _.replace(/"marker-path":"([^\"])+"/g, '"marker-path":"TMP"');
 }
 
 function generates(t, retina, name) {
@@ -14,7 +14,7 @@ function generates(t, retina, name) {
             t.equal(err, null, name + ' no error returned');
             t.pass('is generated');
             if (process.env.UPDATE) {
-                fs.writeFileSync(__dirname + '/data/' + name + '.xml', xml);
+                fs.writeFileSync(__dirname + '/data/' + name + '.xml', normalize(xml));
             }
             t.equal(
                 normalize(xml),
