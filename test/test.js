@@ -3,9 +3,11 @@ var test = require('tap').test,
     cachepath = require('../lib/cachepath.js'),
     urlmarker = require('../lib/urlmarker.js'),
     generatexml = require('../'),
-    mapnik = require('mapnik');
+    mapnik = require('mapnik'),
+    path = require('path');
 
-mapnik.register_default_input_plugins();
+mapnik.register_datasource(path.join(mapnik.settings.paths.input_plugins,'geojson.input'));
+mapnik.register_datasource(path.join(mapnik.settings.paths.input_plugins,'csv.input'));
 
 function normalize(_) {
     return _.replace(/file="([^\"])+"/g, 'file="TMP"');
@@ -64,6 +66,7 @@ function generates(t, retina, name) {
                 normalize(xml),
                 normalize(fs.readFileSync(__dirname + '/data/' + name + '.xml', 'utf8')), name);
             render(xml, function(err,im) {
+                if (err) throw err;
                 var expected_image = file_path + '.png';
                 if (process.env.UPDATE) {
                     im.save(expected_image,"png32");
