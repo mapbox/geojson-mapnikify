@@ -25,7 +25,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"marker-color":"#ace","marker-size":"medium","symbol":"-","marker-symbol":"bus","marker-path":"TMP"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[10,10]]},"properties":{"stroke":"#f0f0f0","stroke-width":2,"stroke-opacity":1}}]}</Parameter>
+            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","marker-url":"api.tiles.mapbox.com/v4/marker/pin-s.png?access_token=pk.eyJ1IjoidG1jdyIsImEiOiJIZmRUQjRBIn0.lRARalfaGHnPdRcc-7QZYQ","marker-path":"TMP"}}]}</Parameter>
         </Datasource>
     </Layer>
 </Map>

@@ -1,5 +1,7 @@
-var test = require('tap').test,
+var test = require('tape'),
     fs = require('fs'),
+    os = require('os'),
+    glob = require('glob'),
     cachepath = require('../lib/cachepath.js'),
     urlmarker = require('../lib/urlmarker.js'),
     generatexml = require('../');
@@ -8,9 +10,14 @@ function normalize(_) {
     return _.replace(/"marker-path":"([^\"])+"/g, '"marker-path":"TMP"');
 }
 
-function generates(t, retina, name) {
+function generates(t, retina, name, message) {
     t.test(name, function(t) {
         generatexml(JSON.parse(fs.readFileSync(__dirname + '/data/' + name + '.geojson')), retina, function(err, xml) {
+            if (message !== undefined) {
+                t.equal(err.message, message, name + ' error returned');
+                t.end();
+                return;
+            }
             t.equal(err, null, name + ' no error returned');
             t.pass('is generated');
             if (process.env.UPDATE) {
@@ -24,19 +31,32 @@ function generates(t, retina, name) {
     });
 }
 
-test('generatexml', function(t) {
+test('clean tmp', function(t) {
+    glob.sync(os.tmpdir() + 'geojson-mapnikify*').forEach(function(f) {
+        fs.unlinkSync(f);
+    });
+    t.end();
+});
+
+test('generatexml', generateXML);
+
+test('generatexml - cached', generateXML);
+
+function generateXML(t) {
     generates(t, false, 'example');
     generates(t, false, 'point');
     generates(t, true, 'point-retina');
     generates(t, true, 'dedup');
     generates(t, true, 'point-retina');
     generates(t, true, 'url-marker');
+    generates(t, true, 'url-marker-no-http');
+    generates(t, true, 'url-marker-invalid', 'Unable to load marker from URL.');
     generates(t, true, 'example-retina');
     generates(t, true, 'feature-nullgeom');
     generates(t, true, 'feature-nullproperties');
     generates(t, false, 'stroked');
     t.end();
-});
+}
 
 test('corners', function(t) {
     generatexml(null, false, function(err, xml) {

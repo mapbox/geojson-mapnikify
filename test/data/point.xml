@@ -25,7 +25,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-fill":"7e7e7e","marker-size":"medium","symbol":"-","name":"Dinagat Islands","marker-path":"TMP"}}]}</Parameter>
+            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","name":"Dinagat Islands","marker-path":"TMP"}}]}</Parameter>
         </Datasource>
     </Layer>
 </Map>

@@ -1,4 +1,4 @@
-var test = require('tap').test,
+var test = require('tape'),
     fs = require('fs'),
     defaults = require('../lib/defaults.js');
 
@@ -18,7 +18,7 @@ test('defaults', function(t) {
             coordinates: [0, 0]
         },
         properties: {
-          "marker-fill" : "7e7e7e",
+          "marker-color" : "7e7e7e",
           "marker-size" : "medium",
           "symbol" : "-"
         }
@@ -33,7 +33,7 @@ test('defaults', function(t) {
             coordinates: [0, 0]
         },
         properties: {
-            'marker-fill': '#f00'
+            'marker-color': '#f00'
         }
     }),
     {
@@ -43,7 +43,7 @@ test('defaults', function(t) {
             coordinates: [0, 0]
         },
         properties: {
-          "marker-fill" : "#f00",
+          "marker-color" : "#f00",
           "marker-size" : "medium",
           "symbol" : "-"
         }
@@ -67,7 +67,7 @@ test('defaults', function(t) {
             coordinates: [0, 0]
         },
         properties: {
-          "marker-fill" : "7e7e7e",
+          "marker-color" : "7e7e7e",
           "marker-size" : "small",
           "symbol" : "-"
         }

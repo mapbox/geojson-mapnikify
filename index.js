@@ -60,9 +60,9 @@ function getRemote(feature, retina, callback) {
 
 function getMarker(feature, retina, callback) {
     var fp = feature.properties || {},
-        size = (fp['marker-size'] || 'm')[0],
-        symbol = (fp['marker-symbol']) ? fp['marker-symbol'] : '',
-        color = (fp['marker-color'] || '7e7e7e').replace('#', '');
+        size = fp['marker-size'][0],
+        symbol = fp['marker-symbol'] ? fp['marker-symbol'] : '',
+        color = fp['marker-color'].replace('#', '');
 
     var options = {
         tint: color,
@@ -104,8 +104,4 @@ function isPoint(feature) {
 
 function markerURL(feature) {
     return (feature.properties || {})['marker-url'];
-}
-
-function cacheKey(retina, properties, type) {
-    return retina + sigmund(properties) + type;
 }
