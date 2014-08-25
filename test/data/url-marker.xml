@@ -1,12 +1,12 @@
 <Map srs="+init=epsg:3857">
     <Style name="geoms">
         <Rule>
-            <Filter>[mapnik::geometry_type]=linestring</Filter>
+            <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
             <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
         </Rule>
         <Rule>
             <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
-            <PolygonSymbolizer fill="[fill]"/>
+            <PolygonSymbolizer fill="[fill]" fill-opacity="[fill-opacity]" />
         </Rule>
     </Style>
     <Style name="points" filter-mode="first">
@@ -25,7 +25,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","marker-url":"https://api.tiles.mapbox.com/v4/marker/pin-s.png?access_token=pk.eyJ1IjoidG1jdyIsImEiOiJIZmRUQjRBIn0.lRARalfaGHnPdRcc-7QZYQ","marker-path":"/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/geojson-mapnikify-0824df32c8bbe7da7b3df1f1d3ab6e1a.png"}}]}]]></Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","marker-url":"https://api.tiles.mapbox.com/v4/marker/pin-s.png?access_token=pk.eyJ1IjoidG1jdyIsImEiOiJIZmRUQjRBIn0.lRARalfaGHnPdRcc-7QZYQ","marker-path":"/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/geojson-mapnikify-6bab4614f3fdb206cb0934c993c189de.png"}}]}]]></Parameter>
         </Datasource>
     </Layer>
 </Map>
