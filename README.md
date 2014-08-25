@@ -22,7 +22,7 @@ Assumptions:
 
 * GeoJSON is valid, and in EPSG:4326
 * Styles, if any, are expressed in simplestyle-spec
-* Mapnik 2.x is the rendering engine
+* Mapnik **3.x** is the rendering engine
 
 ## binary
 

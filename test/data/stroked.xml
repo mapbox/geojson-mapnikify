@@ -1,8 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"><Style name="style-0"><Rule><PointSymbolizer file="/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/73c52cc1d5ce4d4cb149a80c09d6a9db.png" allow-overlap="true" ignore-placement="true"/></Rule></Style>
-<Style name="style-1"><Rule><PolygonSymbolizer fill="#7e7e7e"/>
-<LineSymbolizer stroke="#f0f0f0" stroke-width="2" stroke-opacity="1"/></Rule></Style><Layer name="layer-0" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"><StyleName>style-0</StyleName><Datasource><Parameter name="type">csv</Parameter>
-<Parameter name="inline">geojson
-'{"type":"Point","coordinates":[0,0]}'</Parameter></Datasource></Layer>
-<Layer name="layer-1" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"><StyleName>style-1</StyleName><Datasource><Parameter name="type">csv</Parameter>
-<Parameter name="inline">geojson
-'{"type":"LineString","coordinates":[[0,0],[10,10]]}'</Parameter></Datasource></Layer></Map>
+<Map srs="+init=epsg:3857">
+    <Style name="geoms">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
+            <PolygonSymbolizer fill="[fill]" fill-opacity="[fill-opacity]" />
+        </Rule>
+    </Style>
+    <Style name="points" filter-mode="first">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point and [marker-path]</Filter>
+            <MarkersSymbolizer
+              file="[marker-path]"
+              width="80"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+    </Style>
+    <Layer name="layer" srs="+init=epsg:4326">
+        <StyleName>geoms</StyleName>
+        <StyleName>points</StyleName>
+        <Datasource>
+            <Parameter name="type">geojson</Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"marker-color":"#ace","marker-size":"medium","symbol":"-","marker-symbol":"bus","marker-path":"/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/geojson-mapnikify-73c52cc1d5ce4d4cb149a80c09d6a9db.png"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[10,10]]},"properties":{"stroke":"#0f0","stroke-width":10,"stroke-opacity":1,"fill":"#7e7e7e"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[5,0],[15,10]]},"properties":{"stroke":"#0ff","stroke-width":10,"stroke-opacity":1,"fill":"#7e7e7e"}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[5,0],[15,10],[20,20],[5,0]]]},"properties":{"fill":"#fff","fill-opacity":0.5,"stroke":"#0ff","stroke-width":5}}]}]]></Parameter>
+        </Datasource>
+    </Layer>
+</Map>

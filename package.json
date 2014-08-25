@@ -4,8 +4,8 @@
   "description": "transform geojson with simplestyle-spec into mapnik xml",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js",
-    "cover": "istanbul cover test/test.js && coveralls < ./coverage/lcov.info"
+    "test": "tape test/*.js",
+    "cover": "istanbul cover tape test/*.js && coveralls < ./coverage/lcov.info"
   },
   "bin": {
     "geojson-mapnikify": "./bin/geojson-mapnikify"
@@ -27,19 +27,21 @@
   },
   "homepage": "https://github.com/mapbox/geojson-mapnikify",
   "dependencies": {
-    "xtend": "~3.0.0",
-    "strxml": "0.0.0",
     "geojson-normalize": "0.0.0",
     "queue-async": "~1.0.7",
     "agentkeepalive": "~0.2.2",
     "request": "~2.34.0",
     "makizushi": "0.0.3",
     "minimist": "0.0.8",
-    "sigmund": "~1.0.0"
+    "sigmund": "~1.0.0",
+    "xtend": "~4.0.0",
+    "blend": "~0.10.1"
   },
   "devDependencies": {
-    "tap": "~0.4.8",
     "coveralls": "~2.11.1",
-    "istanbul": "~0.3.0"
+    "istanbul": "~0.3.0",
+    "mapnik": "https://github.com/mapnik/node-mapnik/tarball/mapnik3",
+    "tape": "~2.14.0",
+    "glob": "~4.0.5"
   }
 }

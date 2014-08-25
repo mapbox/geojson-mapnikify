@@ -1,3 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"><Style name="style-0"><Rule><PointSymbolizer file="/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/47c0405bfd041809c12f69379224071d.png" allow-overlap="true" ignore-placement="true"/></Rule></Style><Layer name="layer-0" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"><StyleName>style-0</StyleName><Datasource><Parameter name="type">csv</Parameter>
-<Parameter name="inline">geojson
-'{"type":"Point","coordinates":[125.6,10.1]}'</Parameter></Datasource></Layer></Map>
+<Map srs="+init=epsg:3857">
+    <Style name="geoms">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
+            <PolygonSymbolizer fill="[fill]" fill-opacity="[fill-opacity]" />
+        </Rule>
+    </Style>
+    <Style name="points" filter-mode="first">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point and [marker-path]</Filter>
+            <MarkersSymbolizer
+              file="[marker-path]"
+              width="80"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+    </Style>
+    <Layer name="layer" srs="+init=epsg:4326">
+        <StyleName>geoms</StyleName>
+        <StyleName>points</StyleName>
+        <Datasource>
+            <Parameter name="type">geojson</Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","name":"Dinagat Islands","marker-path":"/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/geojson-mapnikify-47c0405bfd041809c12f69379224071d.png"}}]}]]></Parameter>
+        </Datasource>
+    </Layer>
+</Map>
