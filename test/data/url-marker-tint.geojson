@@ -1,0 +1,11 @@
+{
+    "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [125.6, 10.1]
+        },
+        "properties": {
+            "marker-color": "#f00",
+            "marker-url": "https://api.tiles.mapbox.com/v4/marker/pin-s.png?access_token=pk.eyJ1IjoidG1jdyIsImEiOiJIZmRUQjRBIn0.lRARalfaGHnPdRcc-7QZYQ"
+        }
+}

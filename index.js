@@ -38,7 +38,7 @@ function generateXML(data, retina, callback) {
 }
 
 function getRemote(feature, retina, callback) {
-    var path = cachepath(markerURL(feature)) + '.png';
+    var path = cachepath(markerURL(feature) + feature.properties['marker-color']) + '.png';
 
     var written = function(err) {
         if (err) return callback(err);
