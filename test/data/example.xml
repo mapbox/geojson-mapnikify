@@ -25,7 +25,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"marker-color":"#ace","marker-size":"medium","symbol":"-","marker-symbol":"bus","marker-path":"TMP"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[10,10]]},"properties":{"stroke":"#f0f0f0","stroke-width":2,"stroke-opacity":1}}]}</Parameter>
+            <Parameter name="file">{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"marker-color":"#ace","marker-size":"medium","symbol":"-","marker-symbol":"bus","marker-path":"/var/folders/lh/rwmhbvnd5rdc2qc5t5n2pv4w0000gn/T/geojson-mapnikify-73c52cc1d5ce4d4cb149a80c09d6a9db.png"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[10,10]]},"properties":{"stroke":"#f0f0f0","stroke-width":2,"stroke-opacity":1}}]}</Parameter>
         </Datasource>
     </Layer>
 </Map>
