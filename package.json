@@ -1,6 +1,6 @@
 {
   "name": "geojson-mapnikify",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "transform geojson with simplestyle-spec into mapnik xml",
   "main": "index.js",
   "scripts": {
