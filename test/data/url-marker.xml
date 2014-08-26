@@ -14,7 +14,6 @@
             <Filter>[mapnik::geometry_type]=point and [marker-path]</Filter>
             <MarkersSymbolizer
               file="[marker-path]"
-              width="80"
               allow-overlap="true"
               ignore-placement="true"
             />
