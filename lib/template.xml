@@ -1,12 +1,12 @@
 <Map srs="+init=epsg:3857">
     <Style name="geoms">
         <Rule>
-            <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
-            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
-        </Rule>
-        <Rule>
             <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
             <PolygonSymbolizer fill="[fill]" fill-opacity="[fill-opacity]" />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
         </Rule>
     </Style>
     <Style name="points" filter-mode="first">

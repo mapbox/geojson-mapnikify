@@ -114,10 +114,12 @@ test('defaults', function(t) {
         },
         properties: {
           "fill" : "#555555", // != undefined
-          "fill-opacity" : 0.6 // != undefined
+          "fill-opacity" : 0.6, // != undefined
+          "stroke" : "#555555", // != undefined
+          "stroke-width" : 2, // != undefined
+          "stroke-opacity" : 1 // != undefined
         }
-    }
-    , 'polygon');
+    }, 'polygon');
 
     t.end();
 });

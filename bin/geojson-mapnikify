@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 var generateXML = require('../'),
-    argv = require('minimist')(process.argv.slice(2), {
-        boolean: ['retina', 'normalize']
-    }),
+    argv = require('minimist')(process.argv.slice(2)),
     fs = require('fs');
 
 if (!argv._.length) {
@@ -20,7 +18,3 @@ var gen = generateXML(gj, argv.retina, function(err, res) {
         process.stdout.write(res);
     }
 });
-
-function normalize(_) {
-    return _.replace(/file="([^\"])+"/g, 'file="TMP"');
-}
