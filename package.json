@@ -31,16 +31,16 @@
     "queue-async": "~1.0.7",
     "agentkeepalive": "~0.2.2",
     "request": "~2.34.0",
-    "makizushi": "0.0.3",
+    "makizushi": "1.1.0",
     "minimist": "0.0.8",
     "sigmund": "~1.0.0",
     "xtend": "~4.0.0",
-    "blend": "~0.10.1"
+    "blend": "1.0.x"
   },
   "devDependencies": {
     "coveralls": "~2.11.1",
     "istanbul": "~0.3.0",
-    "mapnik": "https://github.com/mapnik/node-mapnik/tarball/mapnik3",
+    "mapnik": "3.0.x",
     "tape": "~2.14.0",
     "glob": "~4.0.5"
   }
