@@ -6,7 +6,7 @@
         </Rule>
         <Rule>
             <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
-            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" />
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" stroke-opacity="[stroke-opacity]" />
         </Rule>
     </Style>
     <Style name="points" filter-mode="first">
