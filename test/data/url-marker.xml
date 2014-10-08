@@ -12,7 +12,7 @@
     <Style name="points" filter-mode="first">
         <Rule>
             <Filter>[mapnik::geometry_type]=point and [marker-path]</Filter>
-            <MarkersSymbolizer
+            <PointSymbolizer
               file="[marker-path]"
               allow-overlap="true"
               ignore-placement="true"
