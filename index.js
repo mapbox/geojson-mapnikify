@@ -5,6 +5,7 @@ var normalize = require('geojson-normalize'),
     fs = require('fs'),
     sigmund = require('sigmund'),
     enforceDefaults = require('./lib/defaults.js'),
+    normalizeStyle = require('./lib/normalizestyle.js'),
     cachepath = require('./lib/cachepath.js'),
     loadURL = require('./lib/urlmarker.js');
 
@@ -18,7 +19,9 @@ function generateXML(data, retina, callback) {
 
     if (!gj) return callback(new Error('invalid GeoJSON'));
 
-    gj.features = gj.features.map(enforceDefaults);
+    for (var i = 0; i < gj.features.length; i++) {
+        gj.features[i] = enforceDefaults(normalizeStyle(gj.features[i]));
+    }
 
     gj.features.filter(isPoint).forEach(function(feat, i) {
         if (markerURL(feat)) {
