@@ -92,6 +92,7 @@ function generateXML(t) {
     generates(t, true, 'feature-nullgeom');
     generates(t, true, 'feature-nullproperties');
     generates(t, false, 'stroked');
+    generates(t, false, 'hashless');
     t.end();
 }
 

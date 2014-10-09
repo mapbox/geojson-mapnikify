@@ -1,0 +1,30 @@
+<Map srs="+init=epsg:3857">
+    <Style name="geoms">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
+            <PolygonSymbolizer fill="[fill]" fill-opacity="[fill-opacity]" />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" stroke-opacity="[stroke-opacity]" />
+        </Rule>
+    </Style>
+    <Style name="points" filter-mode="first">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point and [marker-path]</Filter>
+            <PointSymbolizer
+              file="[marker-path]"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+    </Style>
+    <Layer name="layer" srs="+init=epsg:4326">
+        <StyleName>geoms</StyleName>
+        <StyleName>points</StyleName>
+        <Datasource>
+            <Parameter name="type">geojson</Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"marker-color":"ace","marker-size":"medium","symbol":"-","marker-symbol":"bus","marker-path":"/tmp/geojson-mapnikify-73c52cc1d5ce4d4cb149a80c09d6a9db.png"}},{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[10,10]]},"properties":{"stroke":"0f0","stroke-width":10,"stroke-opacity":0.5,"fill":"7e7e7e"}}]}]]></Parameter>
+        </Datasource>
+    </Layer>
+</Map>

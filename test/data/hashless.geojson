@@ -1,0 +1,26 @@
+{
+    "type": "FeatureCollection",
+    "features": [{ "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [0, 0]
+        },
+        "properties": {
+            "marker-size": "medium",
+            "marker-symbol": "bus",
+            "marker-color": "ace"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [[0, 0], [10, 10]]
+        },
+        "properties": {
+            "stroke": "0f0",
+            "stroke-width": 10,
+            "stroke-opacity": 0.5,
+            "fill": "7e7e7e"
+        }
+    }]
+}
