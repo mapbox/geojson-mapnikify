@@ -40,7 +40,7 @@
   "devDependencies": {
     "coveralls": "~2.11.1",
     "istanbul": "~0.3.0",
-    "mapnik": "3.0.x",
+    "mapnik": "3.x",
     "tape": "~2.14.0",
     "glob": "~4.0.5"
   }
