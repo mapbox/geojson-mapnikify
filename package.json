@@ -30,7 +30,7 @@
     "geojson-normalize": "0.0.0",
     "queue-async": "~1.0.7",
     "agentkeepalive": "~0.2.2",
-    "request": "~2.34.0",
+    "request": "~2.48.0",
     "makizushi": "1.2.0",
     "minimist": "0.0.8",
     "sigmund": "~1.0.0",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "coveralls": "~2.11.1",
     "istanbul": "~0.3.0",
-    "mapnik": "3.0.x",
+    "mapnik": "3.x",
     "tape": "~2.14.0",
     "glob": "~4.0.5"
   }
