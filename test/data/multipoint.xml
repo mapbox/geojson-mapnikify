@@ -1,0 +1,30 @@
+<Map srs="+init=epsg:3857">
+    <Style name="geoms">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=polygon or [fill]</Filter>
+            <PolygonSymbolizer fill="[fill]" fill-opacity="[fill-opacity]" />
+        </Rule>
+        <Rule>
+            <Filter>[mapnik::geometry_type]=linestring or [stroke]</Filter>
+            <LineSymbolizer stroke="[stroke]" stroke-width="[stroke-width]" stroke-opacity="[stroke-opacity]" />
+        </Rule>
+    </Style>
+    <Style name="points" filter-mode="first">
+        <Rule>
+            <Filter>[mapnik::geometry_type]=point and [marker-path]</Filter>
+            <PointSymbolizer
+              file="[marker-path]"
+              allow-overlap="true"
+              ignore-placement="true"
+            />
+        </Rule>
+    </Style>
+    <Layer name="layer" srs="+init=epsg:4326">
+        <StyleName>geoms</StyleName>
+        <StyleName>points</StyleName>
+        <Datasource>
+            <Parameter name="type">geojson</Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","name":"Dinagat Islands","marker-path":"/tmp/geojson-mapnikify-47c0405bfd041809c12f69379224071d.png"},"geometry":{"type":"MultiPoint","coordinates":[[0,0],[0.5,0.5],[1,1],[0,1],[1,0]]}}]}]]></Parameter>
+        </Datasource>
+    </Layer>
+</Map>
