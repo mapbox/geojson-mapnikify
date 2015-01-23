@@ -102,7 +102,9 @@ function getMarker(feature, retina, callback) {
 }
 
 function isPoint(feature) {
-    return feature.geometry && feature.geometry.type === 'Point';
+    return feature.geometry &&
+        (feature.geometry.type === 'Point' ||
+         feature.geometry.type === 'MultiPoint');
 }
 
 function markerURL(feature) {
