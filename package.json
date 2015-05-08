@@ -35,7 +35,7 @@
     "minimist": "0.0.8",
     "sigmund": "~1.0.0",
     "xtend": "~4.0.0",
-    "blend": "1.0.x"
+    "blend": "https://github.com/mapbox/node-blend/tarball/mapnik-up"
   },
   "devDependencies": {
     "coveralls": "~2.11.1",
