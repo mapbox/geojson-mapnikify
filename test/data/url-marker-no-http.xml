@@ -24,7 +24,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","marker-url":"api.tiles.mapbox.com/v4/marker/pin-s.png?access_token=pk.eyJ1IjoidG1jdyIsImEiOiJIZmRUQjRBIn0.lRARalfaGHnPdRcc-7QZYQ","marker-path":"/var/folders/zd/g7blx8yd1v1_rk5czsml6f3m0000gn/T/geojson-mapnikify-2eb9dd7a6ffc8c2482e7f2720198e727.png"}}]}]]></Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","marker-url":"api.tiles.mapbox.com/v4/marker/pin-s.png?access_token=pk.eyJ1IjoidG1jdyIsImEiOiJIZmRUQjRBIn0.lRARalfaGHnPdRcc-7QZYQ","marker-path":"/var/folders/6v/g9fjq5g12s7dh4r3717gkkrc0000gn/T/geojson-mapnikify-2eb9dd7a6ffc8c2482e7f2720198e727.png"}}]}]]></Parameter>
         </Datasource>
     </Layer>
 </Map>

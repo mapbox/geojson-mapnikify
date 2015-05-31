@@ -24,7 +24,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","name":"Dinagat Islands","marker-path":"/var/folders/zd/g7blx8yd1v1_rk5czsml6f3m0000gn/T/geojson-mapnikify-e9d699e7b9c0e6b59dad547bfeb0b6d9.png"}}]}]]></Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","name":"Dinagat Islands","marker-path":"/var/folders/6v/g9fjq5g12s7dh4r3717gkkrc0000gn/T/geojson-mapnikify-e9d699e7b9c0e6b59dad547bfeb0b6d9.png"}}]}]]></Parameter>
         </Datasource>
     </Layer>
 </Map>
