@@ -60,9 +60,7 @@ function generates(t, retina, name, message) {
                     fs.writeFileSync(__dirname + '/data/' + name + '.xml', xml);
                     im.save(expected_image, 'png32');
                 }
-                var comparison = im.compare(new mapnik.Image.open(expected_image));
-                console.log(expected_image);
-                t.equal(comparison, 0);
+                t.equal(0, im.compare(new mapnik.Image.open(expected_image)));
                 t.end();
             });
         });
