@@ -89,6 +89,7 @@ function generateXML(t) {
     generates(t, true, 'url-marker-tint');
     generates(t, true, 'url-marker-no-http');
     generates(t, true, 'url-marker-invalid', 'Unable to load marker from URL.');
+    generates(t, true, 'url-marker-file');
     generates(t, true, 'example-retina');
     generates(t, true, 'feature-nullgeom');
     generates(t, true, 'feature-nullproperties');
