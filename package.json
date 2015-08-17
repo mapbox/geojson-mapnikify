@@ -35,12 +35,12 @@
     "minimist": "0.0.8",
     "sigmund": "~1.0.0",
     "xtend": "~4.0.0",
-    "blend": "1.0.x"
+    "blend": "~1.0.3"
   },
   "devDependencies": {
     "coveralls": "~2.11.1",
     "istanbul": "~0.3.0",
-    "mapnik": "3.2.x",
+    "mapnik": "~3.4.0",
     "tape": "~2.14.0",
     "glob": "~4.0.5"
   }
