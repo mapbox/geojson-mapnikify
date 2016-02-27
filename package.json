@@ -35,7 +35,7 @@
     "minimist": "~1.2.0",
     "sigmund": "~1.0.0",
     "xtend": "~4.0.0",
-    "blend": "~1.1.0"
+    "blend": "~1.2.0"
   },
   "devDependencies": {
     "coveralls": "~2.11.1",
