@@ -1,5 +1,9 @@
 ## changelog
 
+### 0.7.1
+
+- Fix bug which tinted all url markers to #7e7e7e unless `marker-color` was specified.
+
 ### 0.7.0
 
 - Updated mapnik to 3.5.0
