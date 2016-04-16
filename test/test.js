@@ -86,6 +86,7 @@ function generateXML(t) {
     generates(t, true, 'dedup');
     generates(t, true, 'point-retina');
     generates(t, true, 'url-marker');
+    generates(t, true, 'url-marker2');
     generates(t, true, 'url-marker-tint');
     generates(t, true, 'url-marker-no-http');
     generates(t, true, 'url-marker-invalid', 'Unable to load marker from URL.');
