@@ -20,7 +20,9 @@ function generateXML(data, retina, callback) {
     if (!gj) return callback(new Error('invalid GeoJSON'));
 
     for (var i = 0; i < gj.features.length; i++) {
-        gj.features[i] = enforceDefaults(normalizeStyle(gj.features[i]));
+        if (!markerURL(gj.features[i])) {
+            gj.features[i] = enforceDefaults(normalizeStyle(gj.features[i]));
+        }
     }
 
     gj.features.filter(isPoint).forEach(function(feat, i) {

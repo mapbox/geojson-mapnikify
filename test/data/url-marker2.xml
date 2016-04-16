@@ -24,7 +24,7 @@
         <StyleName>points</StyleName>
         <Datasource>
             <Parameter name="type">geojson</Parameter>
-            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-color":"7e7e7e","marker-size":"medium","symbol":"-","marker-url":"http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png","marker-path":"/tmp/geojson-mapnikify-ee85db82473f94f32831f3f299252e71.png"}}]}]]></Parameter>
+            <Parameter name="inline"><![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[125.6,10.1]},"properties":{"marker-url":"http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png","marker-path":"/tmp/geojson-mapnikify-17ea2527646c7065441ae989650c97da.png"}}]}]]></Parameter>
         </Datasource>
     </Layer>
 </Map>
