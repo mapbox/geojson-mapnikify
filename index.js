@@ -22,6 +22,8 @@ function generateXML(data, retina, callback) {
     for (var i = 0; i < gj.features.length; i++) {
         if (!markerURL(gj.features[i])) {
             gj.features[i] = enforceDefaults(normalizeStyle(gj.features[i]));
+        } else {
+            gj.features[i] = normalizeStyle(gj.features[i]);
         }
     }
 
