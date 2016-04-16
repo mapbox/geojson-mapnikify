@@ -1,0 +1,10 @@
+{
+    "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [125.6, 10.1]
+        },
+        "properties": {
+            "marker-url": "http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png"
+        }
+}
