@@ -18,6 +18,9 @@ test('normalizeStyle point', function(t) {
     checkPoint({ 'marker-color': 'ff0000' }, { 'marker-color': '#ff0000' }, 'point: marker-color ff0000 => #ff0000');
     checkPoint({ 'marker-color': '#f00' }, { 'marker-color': '#f00' }, 'point: marker-color #f00 => #f00');
     checkPoint({ 'marker-color': 'f00' }, { 'marker-color': '#f00' }, 'point: marker-color f00 => #f00');
+    checkPoint({ 'marker-color': 'rgb(,,,)' }, {}, 'point: marker-color rgb(,,,) => undefined');
+    checkPoint({ 'marker-color': 'rgb(0,0,0)' }, { 'marker-color': 'rgb(0,0,0)' }, 'point: marker-color rgb(0,0,0) => rgb(0,0,0)');
+    checkPoint({ 'marker-color': 'rgb(255,255,255)' }, { 'marker-color': 'rgb(255,255,255)' }, 'point: marker-color rgb(255,255,255) => rgb(255,255,255)');
     t.end();
 });
 
@@ -51,6 +54,9 @@ test('normalizeStyle fill', function(t) {
     checkFill({ 'fill': 'ff0000' }, { 'fill': '#ff0000' }, 'fill: fill ff0000 => #ff0000');
     checkFill({ 'fill': '#f00' }, { 'fill': '#f00' }, 'fill: fill #f00 => #f00');
     checkFill({ 'fill': 'f00' }, { 'fill': '#f00' }, 'fill: fill f00 => #f00');
+    checkFill({ 'fill': 'rgb(,,,)' }, {}, 'point: fill rgb(,,,) => undefined');
+    checkFill({ 'fill': 'rgb(0,0,0)' }, { 'fill': 'rgb(0,0,0)' }, 'point: fill rgb(0,0,0) => rgb(0,0,0)');
+    checkFill({ 'marker-color': 'rgb(255,255,255)' }, { 'marker-color': 'rgb(255,255,255)' }, 'point: marker-color rgb(255,255,255) => rgb(255,255,255)');
     checkFill({ 'fill-opacity': 'red' }, {}, 'fill: fill-opacity red => undefined');
     checkFill({ 'fill-opacity': 0.5 }, { 'fill-opacity': 0.5 }, 'fill: fill-opacity 0.5 => 0.5');
     checkFill({ 'fill-opacity': '0.5' }, { 'fill-opacity': 0.5 }, 'fill: fill-opacity "0.5" => 0.5');
