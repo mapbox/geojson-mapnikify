@@ -30,7 +30,7 @@
     "geojson-normalize": "~0.0.1",
     "queue-async": "~1.0.7",
     "agentkeepalive": "~2.0.2",
-    "request": "~2.65.0",
+    "request": "~2.78.0",
     "makizushi": "~1.4.0",
     "minimist": "~1.2.0",
     "sigmund": "~1.0.0",
