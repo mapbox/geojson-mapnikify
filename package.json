@@ -1,5 +1,5 @@
 {
-  "name": "geojson-mapnikify",
+  "name": "@mapbox/geojson-mapnikify",
   "version": "0.7.2",
   "description": "transform geojson with simplestyle-spec into mapnik xml",
   "main": "index.js",
