@@ -1,5 +1,9 @@
 ## changelog
 
+## 0.9.0
+
+- Update to mapnik 3.7.0
+
 ### 0.8.0
 
 - Update to mapnik 3.6.0
