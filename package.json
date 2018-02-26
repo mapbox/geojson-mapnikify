@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/geojson-mapnikify",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "transform geojson with simplestyle-spec into mapnik xml",
   "main": "index.js",
   "scripts": {
@@ -31,11 +31,11 @@
     "queue-async": "~1.0.7",
     "agentkeepalive": "~2.0.2",
     "request": "~2.78.0",
-    "@mapbox/makizushi": "~1.6.0",
+    "@mapbox/makizushi": "~2.0.0",
     "minimist": "~1.2.0",
     "sigmund": "~1.0.0",
     "xtend": "~4.0.0",
-    "@mapbox/blend": "~1.5.0"
+    "@mapbox/blend": "~2.0.0"
   },
   "devDependencies": {
     "coveralls": "~2.11.1",

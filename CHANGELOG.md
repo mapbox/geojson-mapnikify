@@ -1,8 +1,11 @@
 ## changelog
 
-## 0.9.0
+## 1.0.0
 
 - Update to mapnik 3.7.0
+- Update to blend 2.0.0
+- Update to makizushi 2.0.0
+- Drops windows support
 
 ### 0.8.0
 
