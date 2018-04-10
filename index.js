@@ -7,7 +7,8 @@ var normalize = require('@mapbox/geojson-normalize'),
     enforceDefaults = require('./lib/defaults.js'),
     normalizeStyle = require('./lib/normalizestyle.js'),
     cachepath = require('./lib/cachepath.js'),
-    loadURL = require('./lib/urlmarker.js');
+    loadURL = require('./lib/urlmarker.js'),
+    get = require('./lib/get.js');
 
 var template = fs.readFileSync(__dirname + '/lib/template.xml', 'utf8');
 
@@ -110,3 +111,9 @@ function isPoint(feature) {
 function markerURL(feature) {
     return (feature.properties || {})['marker-url'];
 }
+
+function setRequestClient(requestClient){
+    get.requestClient = requestClient;
+}
+
+module.exports.setRequestClient = setRequestClient;
