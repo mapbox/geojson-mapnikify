@@ -31,11 +31,11 @@
     "queue-async": "~1.0.7",
     "agentkeepalive": "~2.0.2",
     "request": "~2.78.0",
-    "@mapbox/makizushi": "~2.0.0",
+    "@mapbox/makizushi": "https://github.com/mapbox/makizushi/tarball/mapnik-4",
     "minimist": "~1.2.0",
     "sigmund": "~1.0.0",
     "xtend": "~4.0.0",
-    "@mapbox/blend": "~2.0.0"
+    "@mapbox/blend": "https://github.com/mapbox/node-blend/tarball/mapnik-4"
   },
   "devDependencies": {
     "coveralls": "~2.11.1",
