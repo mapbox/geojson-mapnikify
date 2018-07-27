@@ -1,10 +1,13 @@
 var test = require('tape'),
     fs = require('fs'),
     os = require('os'),
+    path = require('path'),
     glob = require('glob'),
+    nock = require('nock'),
     mapnik = require('mapnik'),
     cachepath = require('../lib/cachepath.js'),
     urlmarker = require('../lib/urlmarker.js'),
+    request = require('request'),
     generatexml = require('../');
 
 mapnik.register_default_input_plugins();
@@ -106,23 +109,76 @@ test('cachepath', function(t) {
 });
 
 test('urlmarker-too-large', function(t) {
+    var file = fs.readFileSync(path.resolve(__dirname, 'data', 'too-large.png'));
+    var scope = nock('http://devnull.mapnik.org')
+        .get(/.*/)
+        .reply(200, file, { 'content-type': 'image/png' });
+
     urlmarker({
         properties: {
-            'marker-url': 'http://farm6.staticflickr.com/5497/9183359573_62e78cf675_o.png'
+            'marker-url': 'http://devnull.mapnik.org/too-large.png'
         }
     }, function(err, res) {
             t.equal(err.message, 'Marker image size must not exceed 160000 pixels.');
+            nock.cleanAll();
             t.end();
         });
 });
 
 test('urlmarker-jpg', function(t) {
+    var file = fs.readFileSync(path.resolve(__dirname, 'data', 'mountain.jpg'));
+    var scope = nock('https://devnull.mapnik.org')
+        .get(/.*/)
+        .reply(200, file, { 'content-type': 'image/jpg' });
+
     urlmarker({
         properties: {
-            'marker-url': 'https://farm4.staticflickr.com/3763/13561719523_ac1f3a2a77_s.jpg'
+            'marker-url': 'https://devnull.mapnik.org/mountain.jpg'
         }
     }, function(err, res) {
             t.equal(err.message, 'Marker image format is not supported.');
+            nock.cleanAll()
+            t.end();
+        });
+});
+
+test('urlmarker-custom-client', function(t) {
+    var client = request.defaults({ timeout: 100, encoding: 'binary' });
+    var file = fs.readFileSync(path.resolve(__dirname, 'data', 'rocket.png'));
+    var scope = nock('http://devnull.mapnik.org')
+        .get(/.*/)
+        .delay(300)
+        .reply(200, file, { 'content-type': 'image/png' });
+
+    generatexml.setRequestClient(client);
+    urlmarker({
+        properties: {
+            'marker-url': 'http://devnull.mapnik.org/rocket.png'
+        }
+    }, function(err, res) {
+            t.equal(err.message, 'Unable to load marker from URL.');
+            t.equal(err.originalError.code, 'ESOCKETTIMEDOUT');
+            generatexml.setRequestClient(null);
+            nock.cleanAll();
+            t.end();
+        });
+});
+
+// ensure generatexml.setRequestClient(null) returns to default client
+test('urlmarker-uncustomize-client', function(t) {
+    var file = fs.readFileSync(path.resolve(__dirname, 'data', 'rocket.png'));
+    var scope = nock('http://devnull.mapnik.org', { reqheaders: {'accept-encoding': 'binary'}})
+        .get(/.*/)
+        .delay(300)
+        .reply(200, file, { 'content-type': 'image/png' });
+
+    urlmarker({
+        properties: {
+            'marker-url': 'http://devnull.mapnik.org/rocket.png'
+        }
+    }, function(err, res) {
+            t.ifErr(err);
+            nock.cleanAll();
             t.end();
         });
 });

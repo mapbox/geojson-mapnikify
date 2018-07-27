@@ -42,3 +42,24 @@ Transform GeoJSON into Mapnik XML.
 * `geojson` is a GeoJSON object.
 * `retina` is true or false for whether the style should be optimized for 2x rendering.
 * `callback` called with `(err, xml)` where xml is a string
+
+### url markers
+
+If your GeoJSON object has one or more features with a `marker-url` property, `mapnikify()` will write the images found at the url into a file in a temporary directory and use that path in the Mapnik XML. This uses the [request library](https://www.npmjs.com/package/request) to handle the http file fetching.
+
+By default the request will attempt to fetch binary data from the specified url. If the url is `http` and not `https` , Mapnikify will use [agentkeepalive](https://www.npmjs.com/package/agentkeepalive) to speed up requesting multiple images. There is also a default timeout of 5 seconds.
+
+You can customize the defaults passed to `request()` . Simply set a custom wrapper defined with `request.defaults` . See [request's documentation on defaults](https://www.npmjs.com/package/request#requestdefaultsoptions) for more information. For a quick example, this will set a longer timeout:
+
+```javascript
+var mapnikify = require('mapnikify');
+var myRequest = require('request').defaults({
+  timeout: 10000,
+  followRedirect: false
+});
+mapnikify.setRequestClient(myRequest);
+
+mapnikify(geojson, retina, callback);
+
+mapnikify.setRequestClient(null); // return to mapnikify defaults
+```
