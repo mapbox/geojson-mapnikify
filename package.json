@@ -27,15 +27,15 @@
   },
   "homepage": "https://github.com/mapbox/geojson-mapnikify",
   "dependencies": {
+    "@mapbox/blend": "^2.0.1-0",
     "@mapbox/geojson-normalize": "~0.0.1",
-    "queue-async": "~1.0.7",
+    "@mapbox/makizushi": "^2.0.1-1",
     "agentkeepalive": "~2.0.2",
-    "request": "~2.78.0",
-    "@mapbox/makizushi": "~2.0.0",
     "minimist": "~1.2.0",
+    "queue-async": "~1.0.7",
+    "request": "~2.78.0",
     "sigmund": "~1.0.0",
-    "xtend": "~4.0.0",
-    "@mapbox/blend": "~2.0.0"
+    "xtend": "~4.0.0"
   },
   "devDependencies": {
     "coveralls": "~2.11.1",
