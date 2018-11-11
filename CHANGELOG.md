@@ -1,5 +1,11 @@
 ## changelog
 
+## 2.0.0
+
+- Update to @mapbox/makizushi ^3.0.1
+- Update to @mapbox/blend ^2.0.1
+- Update to mapnik 3.x || 4.x
+
 ## 1.0.0
 
 - Update to mapnik 3.7.0
