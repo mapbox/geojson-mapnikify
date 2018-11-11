@@ -1,8 +1,8 @@
 language: node_js
 
 node_js:
-  - "0.10"
-  - "4.4.2"
+  - 6
+  - 8
 
 sudo: false
 
@@ -14,4 +14,4 @@ addons:
      - libstdc++6 # upgrade libstdc++ on linux to support C++11
 
 after_success:
- - if [[ ${TRAVIS_NODE_VERSION} == "0.10" ]]; then npm run coverage; fi;
+ - npm run coverage

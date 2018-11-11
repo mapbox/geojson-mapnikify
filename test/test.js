@@ -89,7 +89,6 @@ function generateXML(t) {
     generates(t, true, 'dedup');
     generates(t, true, 'point-retina');
     generates(t, true, 'example-retina');
-    generates(t, true, 'feature-nullgeom');
     generates(t, true, 'feature-nullproperties');
     generates(t, false, 'stroked');
     generates(t, false, 'hashless');
