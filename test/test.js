@@ -163,6 +163,26 @@ test('urlmarker-custom-client', function(t) {
         });
 });
 
+test('urlmarker-too-large-custom-client', function(t) {
+    var client = request.defaults({ timeout: 100, encoding: 'binary' });
+    var file = fs.readFileSync(path.resolve(__dirname, 'data', 'html-page.png'));
+    var scope = nock('http://devnull.mapnik.org')
+        .get(/.*/)
+        .reply(200, file, { 'content-type': 'text/html' });
+
+    generatexml.setRequestClient(client);
+    urlmarker({
+        properties: {
+            'marker-url': 'http://devnull.mapnik.org/html-page.png'
+        }
+    }, function(err, res) {
+            t.equal(err.message, 'Marker loaded from URL is too large.');
+            generatexml.setRequestClient(null);
+            nock.cleanAll();
+            t.end();
+        });
+});
+
 // ensure generatexml.setRequestClient(null) returns to default client
 test('urlmarker-uncustomize-client', function(t) {
     var file = fs.readFileSync(path.resolve(__dirname, 'data', 'rocket.png'));
