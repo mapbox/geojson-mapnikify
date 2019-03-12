@@ -1,5 +1,9 @@
 ## changelog
 
+## 2.1.0
+
+- Throw error with description if url marker is too large.
+
 ## 2.0.0
 
 - Update to @mapbox/makizushi ^3.0.1
