@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,600i,700,700i" rel="stylesheet">
+    <title>PC | DLC Management</title>
+    <link rel="stylesheet" href="http://dlc.development.propertycapsule.com/property/skins/assets/24/css/app.css">
+    <style>
+        div#pc-wrapper ul.list {
+            max-height: 300px;
+            overflow-y: scroll;
+        }
+        button.search-btn {
+            display: none !important;
+        }
+        div.hide-me {
+            display: none !important;
+        }
+        div.use-me {
+            min-height: 250px ;
+        }
+.chevron::before {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    left: 0.15em;
+    position: relative;
+    top: 0.15em;
+    transform: rotate(-45deg);
+    vertical-align: middle;
+    width: 0.45em;
+}
+
+.chevron.right:before {
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.chevron.left:before {
+    left: 0.25em;
+    transform: rotate(-135deg);
+}
+    </style>
+
+		<style>
+			@media only screen and (max-width:500px) {
+				.printable-plan {display:none;}
+				#panel1 {padding:0 !Important;}
+				#static_plan {display:block !important;}
+				#jsviewer{display:none !important;}
+				.pc-demo{display:block !important;}
+				.responsive-table{display:none;} }
+		</style>
+	<style>
+                 .legendBoxAvail {width:15px;height:15px; background-color:#67BC52;}         
+                 .legendBoxComAvail {width:15px;height:15px; background-color:#3F7BB3;}
+                 .legendTitle {vertical-align:middle; font-size:15pt;}                                  
+                 .legendTable table tr td {vertical-align:middle;}                                      
+	</style>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://chndlc.wpengine.com/template/pc/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="PC | DLC Management" />
+<meta property="og:url" content="http://chndlc.wpengine.com/template/pc/" />
+<meta property="og:site_name" content="DLC Management" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PC | DLC Management" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+        <script type="text/javascript">
+            window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/chndlc.wpengine.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.5"}};
+            !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+        </script>
+        <style type="text/css">
+img.wp-smiley,
+img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='dlc-core-functionality-css'  href='http://chndlc.wpengine.com/wp-content/plugins/dlc-core-functionality/public/css/dlc-core-functionality-public.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='bodhi-svgs-attachment-css'  href='http://chndlc.wpengine.com/wp-content/plugins/svg-support/css/svgs-attachment.css?ver=4.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='sage/css-css'  href='http://chndlc.wpengine.com/wp-content/themes/dlc2018/dist/styles/main-d06f9aba12.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://chndlc.wpengine.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://chndlc.wpengine.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://chndlc.wpengine.com/wp-content/plugins/dlc-core-functionality/public/js/dlc-core-functionality-public.js?ver=1.0.0'></script>
+<link rel='https://api.w.org/' href='http://chndlc.wpengine.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://chndlc.wpengine.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://chndlc.wpengine.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='http://chndlc.wpengine.com/?p=1066' />
+<link rel="alternate" type="application/json+oembed" href="http://chndlc.wpengine.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fchndlc.wpengine.com%2Ftemplate%2Fpc%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://chndlc.wpengine.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fchndlc.wpengine.com%2Ftemplate%2Fpc%2F&#038;format=xml" />
+<link rel="shortcut icon" href="http://chndlc.wpengine.com/wp-content/uploads/2018/05/favicon-96x96.png" />
+
+
+</head>
+  <body class="dlc_pc_template-template dlc_pc_template-template-pc-template dlc_pc_template-template-pc-template-php single single-dlc_pc_template postid-1066 pc sidebar-primary">
+    <!--[if IE]>
+      <div class="alert alert-warning">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.      </div>
+    <![endif]-->
+        <div class="off-canvas-wrapper">
+            <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+
+<header class="offcanvas-header">
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <a href="http://chndlc.wpengine.com" class="offcanvas-logo">
+        <img src="http://chndlc.wpengine.com/wp-content/uploads/2018/04/logo-white.svg" alt="DLC Management White Logo">
+    </a>
+    <button class="search-button" data-open="searchbar">Search</button>
+</header>
+
+<ul class="menu vertical offcanvas-menu" data-responsive-menu="accordion"><li id="menu-item-1076" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sub-menu menu-item-1076"><a href="#">About</a>
+<ul class="menu">
+    <li id="menu-item-497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-497"><a href="http://chndlc.wpengine.com/about/">Learn About Us</a></li>
+    <li id="menu-item-499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-499"><a href="http://chndlc.wpengine.com/about/team/">Team</a></li>
+    <li id="menu-item-498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-498"><a href="http://chndlc.wpengine.com/about/dlc-life/">DLC Life</a></li>
+</ul>
+</li>
+<li id="menu-item-507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sub-menu menu-item-507"><a>Properties</a>
+<ul class="menu">
+    <li id="menu-item-508" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-508"><a href="http://dlc.propertycapsule.com/">Property Search</a></li>
+    <li id="menu-item-496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496"><a href="http://chndlc.wpengine.com/success-stories/">Success Stories</a></li>
+</ul>
+</li>
+<li id="menu-item-509" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sub-menu menu-item-509"><a href="#">What We Do</a>
+<ul class="menu">
+    <li id="menu-item-495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-495"><a href="http://chndlc.wpengine.com/what-we-do/">Capabilities</a></li>
+    <li id="menu-item-505" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-505"><a href="http://chndlc.wpengine.com/service/acquisitions-dispositions/">Acquisitions <span>&#038; Dispositions</span></a></li>
+    <li id="menu-item-504" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-504"><a href="http://chndlc.wpengine.com/service/development/">Development</a></li>
+    <li id="menu-item-503" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-503"><a href="http://chndlc.wpengine.com/service/specialized-third-party-services/">Specialized Third Party Services</a></li>
+    <li id="menu-item-502" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-502"><a href="http://chndlc.wpengine.com/service/outsourced-real-estate-services/">Outsourced Real Estate Services</a></li>
+</ul>
+</li>
+ <li id="menu-item-1483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1483" role="menuitem"><a href="https://www.dlcmgmt.com/news-media/">News &amp; Media</a></li>
+<li id="menu-item-510" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sub-menu menu-item-510"><a href="#">Human Capital</a>
+<ul class="menu">
+    <li id="menu-item-493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493"><a href="http://chndlc.wpengine.com/human-capital/">Human Capital</a></li>
+    <li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="http://chndlc.wpengine.com/human-capital/careers/">Careers</a></li>
+</ul>
+</li>
+<li id="menu-item-501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-501"><a href="http://chndlc.wpengine.com/contact/">Contact</a></li>
+</ul>
+<ul class="socials">
+        <li>
+        <a href="https://twitter.com/DLCManagement">
+            <img src="http://chndlc.wpengine.com/wp-content/themes/dlc2018/dist/images/twitter.svg" alt="Twitter">
+        </a>
+    </li>
+            <li>
+        <a href="https://www.facebook.com/DLCManagement/">
+            <img src="http://chndlc.wpengine.com/wp-content/themes/dlc2018/dist/images/facebook.svg" alt="Facebook">
+        </a>
+    </li>
+            <li>
+        <a href="https://www.linkedin.com/company/dlc-management-corp/">
+            <img src="http://chndlc.wpengine.com/wp-content/themes/dlc2018/dist/images/linkedin.svg" alt="Linkedin">
+        </a>
+    </li>
+    </ul>
+
+<ul class="menu align-center utility-menu"><li id="menu-item-513" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513"><a href="http://chndlc.wpengine.com/human-capital/careers/">Careers</a></li>
+<li id="menu-item-511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-511"><a href="http://chndlc.wpengine.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-512"><a href="http://chndlc.wpengine.com/terms-of-service/">Terms of Service</a></li>
+</ul>           </div>
+            <div class="off-canvas-content" data-off-canvas-content>
+
+<header class="site-header">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x align-center">
+      <div class="cell small-11 medium-12">
+                <div class="inner">
+
+                                            <div class="hide-for-large">
+                            <button type="button" class="menu-icon" data-toggle="offCanvas"></button>
+                        </div>
+
+                                            <ul class="dropdown menu primary-nav left show-for-large" data-dropdown-menu><li id="menu-item-1077" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sub-menu menu-item-1077"><a href="http://chndlc.wpengine.com/about/">About</a>
+<ul class="menu">
+    <li id="menu-item-479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-479"><a href="http://chndlc.wpengine.com/about/">Learn About Us</a></li>
+    <li id="menu-item-481" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-481"><a href="http://chndlc.wpengine.com/about/team/">Team</a></li>
+    <li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="http://chndlc.wpengine.com/about/dlc-life/">DLC Life</a></li>
+</ul>
+</li>
+<li id="menu-item-1009" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sub-menu menu-item-1009"><a href="http://dlc.propertycapsule.com/">Properties</a>
+<ul class="menu">
+    <li id="menu-item-459" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459"><a href="http://dlc.propertycapsule.com/">Property Search</a></li>
+    <li id="menu-item-514" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-514"><a href="http://chndlc.wpengine.com/success-stories/">Success Stories</a></li>
+</ul>
+</li>
+<li id="menu-item-1078" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sub-menu menu-item-1078"><a href="http://chndlc.wpengine.com/what-we-do/">What We Do</a>
+<ul class="menu">
+    <li id="menu-item-482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-482"><a href="http://chndlc.wpengine.com/what-we-do/">Capabilities</a></li>
+    <li id="menu-item-486" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-486"><a href="http://chndlc.wpengine.com/service/acquisitions-dispositions/">Acquisitions <span>&#038; Dispositions</span></a></li>
+    <li id="menu-item-485" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-485"><a href="http://chndlc.wpengine.com/service/development/">Development</a></li>
+    <li id="menu-item-483" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-483"><a href="http://chndlc.wpengine.com/service/outsourced-real-estate-services/">Outsourced Real Estate Services</a></li>
+    <li id="menu-item-484" class="menu-item menu-item-type-post_type menu-item-object-dlc_service menu-item-484"><a href="http://chndlc.wpengine.com/service/specialized-third-party-services/">Specialized Third Party Services</a></li>
+</ul>
+</li>
+</ul>
+                    <div class="site-branding">
+                        <a href="http://chndlc.wpengine.com"><img src="http://chndlc.wpengine.com/wp-content/uploads/2018/04/logo-inner.svg" alt="DLC Management Small Logo"></a>                   </div>
+
+                                            <ul class="dropdown menu primary-nav right show-for-large" data-dropdown-menu>
+ <style> .rollover a:hover {color:#0095ce;} </style>
+ <li id="menu-item-1483" class="rollover menu-item menu-item-type-post_type menu-item-object-page menu-item-1483" role="menuitem"><a href="https://www.dlcmgmt.com/news-media/">News &amp; Media</a></li>
+
+<li id="menu-item-1079" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sub-menu menu-item-1079"><a href="http://chndlc.wpengine.com/human-capital/">Human Capital</a>
+<ul class="menu">
+    <li id="menu-item-487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-487"><a href="http://chndlc.wpengine.com/human-capital/">Human Capital</a></li>
+    <li id="menu-item-488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-488"><a href="http://chndlc.wpengine.com/human-capital/careers/">Careers</a></li>
+</ul>
+</li>
+<li id="menu-item-489" class="rollover menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="http://chndlc.wpengine.com/contact/">Contact</a></li>
+</ul>
+		<button class="search-button" data-open="searchbar">Search</button>
+
+                </div>
+            </div>
+    </div>
+  </div>
+</header>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+             <script type='text/javascript' src="http://dlc.development.propertycapsule.com/property/3rd_party/underscore/underscore.js"></script>
+        
+<div class="header-progress-bar"></div> <div class="searchbar-modal" id="searchbar" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
+
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close search bar" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <form action="/" class="searchbar-form" id="dynamic-form">
+    <style>
+        #dx-states-list, #dx-property-list, #dx-metroArea-list, #dx-leasing-list, #dx-tenants-list {height:380px; overflow:scroll;}
+        #dx-gla-list, #dx-population-list {height: 220px; overflow:scroll;}
+    </style>
+        <div class="searchbar">
+            <div class="searchbar-title">Property Search</div>
+
+            <div class="searchbarform-filedset">
+                <div class="form-row">
+                    <select style="display: none;" id="dx-property-select" class="pc-property-dx-property">
+                        <option value="" data-display="Properties">All</option>
+                    </select><div class="nice-select" tabindex="0"><span class="current">Properties</span><ul class="list pc-property-dx-property" id="dx-property-list"><li data-value="" data-display="Properties" class="option selected">All</li></ul></div>
+                </div>
+
+                <div class="form-row">
+                    <select style="display: none;" id="dx-states-select" class="pc-property-dx-state">
+                        <option value="" data-display="States">All</option>
+                    </select><div class="nice-select" tabindex="0"><span class="current">States</span><ul class="list pc-property-dx-state" id="dx-states-list"><li data-value="" data-display="States" class="option selected">All</li></ul></div>
+                </div>
+
+                <div class="form-row">
+                    <select style="display: none;" id="dx-metroArea-select" class="pc-property-dx-metroArea">
+                        <option value="" data-display="Metro Area">All</option>
+                    </select><div class="nice-select" tabindex="0"><span class="current">Metro Area</span><ul class="list pc-property-dx-metroArea" id="dx-metroArea-list"><li data-value="" data-display="Metro Area" class="option selected">All</li>
+
+                    </ul></div>
+                </div>
+
+                <div class="form-row">
+                    <select style="display: none;" id="dx-leasing-select" class="pc-property-dx-agent">
+                        <option value="" data-display="Leasing Represantative">Leasing representative</option>
+                    </select><div class="nice-select" tabindex="0"><span class="current">Leasing Representative</span><ul class="list pc-property-dx-agent"  id="dx-leasing-list"><li data-value="" data-display="Leasing Represantative" class="option selected">Leasing representative</li></ul></div>
+                </div>
+
+                <div class="form-row half-row">
+                    <input type="number" placeholder="SqFt Min" class="pc-property-dx-sqft-min"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div>
+                </div>
+
+                <div class="form-row half-row">
+                    <input type="number" placeholder="SqFt Max" class="pc-property-dx-sqft-max"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div>
+                </div>
+
+                <div class="form-row">
+                    <select style="display: none;" id="dx-income-select" class="pc-property-dx-income">
+                        <option value="" data-display="Income">All</option>
+
+                    </select><div class="nice-select" tabindex="0"><span class="current">Income</span><ul class="list pc-search-dx-income" id="dx-income-list"><li data-value="" data-display="Income" class="option selected">All</li></ul></div>
+                </div>
+
+                <div class="form-row">
+                    <select style="display: none;" id="dx-tenants-select" class="pc-property-dx-tenant">
+                        <option value="" data-display="Major Tenants">All</option>
+                    </select><div class="nice-select" tabindex="0"><span class="current">Major Tenants</span><ul class="list pc-property-dx-tenant" id="dx-tenants-list"></ul></div>
+                </div>
+
+                <div class="form-row">
+                    <select style="display: none;" id="dx-gla-select" class="pc-property-dx-gla">
+                        <option value="" data-display="GLA">All</option>
+                    </select><div class="nice-select" tabindex="0"><span class="current">GLA</span><ul class="list pc-search-dx-gla" id="dx-gla-list"><li data-value="" data-display="GLA" class="option selected">All</li></ul></div>
+                </div>
+
+                <div class="form-row">
+                    <select style="display: none;" id="dx-population-select" class="pc-property-dx-population">
+                    </select><div class="nice-select" tabindex="0"><span class="current">Population</span><ul class="list pc-search-dx-population" id="dx-population-list"><li data-value="" data-display="Population" class="option selected">All</li></ul></div>
+                </div>
+
+                <div class="form-row">
+                    <input type="text" placeholder="Keyword Search" class="pc-property-dx-text">
+                </div>
+
+            </div>
+
+            <div class="searchbar-form-option">
+                <div class="checkbox">
+                    <label>
+                        <input class="pc-property-dx-avail" type="checkbox">
+                        <span></span>Only show properties with available space
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="text-center">
+                <button type="button" id="dx-search-submit-form-submit" class="button">Search</button>
+            </div>
+        </div>
+    </form>
+<script>
+	(function ($) {
+		var loadScript = function(url, callback)
+            {
+                // Adding the script tag to the head as suggested before
+                var head = document.getElementsByTagName('head')[0];
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = url;
+
+                // Then bind the event to the callback function.
+                // There are several events for cross browser compatibility.
+                script.onreadystatechange = callback;
+                script.onload = callback;
+
+                // Fire the loading
+                head.appendChild(script);
+            }
+            var searchMain = function() {
+                if (typeof window.jQuery.fn.niceSelect === undefined) {
+                    (function (jQuery) {
+                          window.jQuery.fn.niceSelect = function (method) {
+
+                            // Methods
+                            if (typeof method == 'string') {
+                              if (method == 'update') {
+                                this.each(function () {
+                                  var $select = $(this);
+                                  var $dropdown = $(this).next('.nice-select');
+                                  var open = $dropdown.hasClass('open');
+
+                                  if ($dropdown.length) {
+                                    $dropdown.remove();
+                                    create_nice_select($select);
+
+                                    if (open) {
+                                      $select.next().trigger('click');
+                                    }
+                                  }
+                                });
+                              } else if (method == 'destroy') {
+                                this.each(function () {
+                                  var $select = $(this);
+                                  var $dropdown = $(this).next('.nice-select');
+
+                                  if ($dropdown.length) {
+                                    $dropdown.remove();
+                                    $select.css('display', '');
+                                  }
+                                });
+                                if ($('.nice-select').length == 0) {
+                                  $(document).off('.nice_select');
+                                }
+                              } else {
+                                console.log('Method "' + method + '" does not exist.');
+                              }
+                              return this;
+                            }
+
+                            // Hide native select
+                            this.hide();
+
+                            // Create custom markup
+                            this.each(function () {
+                              var $select = $(this);
+
+                              if (!$select.next().hasClass('nice-select')) {
+                                create_nice_select($select);
+                              }
+                            });
+
+                            function create_nice_select($select) {
+                              $select.after($('<div></div>').addClass('nice-select').addClass($select.attr('class') || '').addClass($select.attr('disabled') ? 'disabled' : '').attr('tabindex', $select.attr('disabled') ? null : '0').html('<span class="current"></span><ul class="list"></ul>'));
+
+                              var $dropdown = $select.next();
+                              var $options = $select.find('option');
+                              var $selected = $select.find('option:selected');
+
+                              $dropdown.find('.current').html($selected.data('display') || $selected.text());
+
+                              $options.each(function (i) {
+                                var $option = $(this);
+                                var display = $option.data('display');
+
+                                $dropdown.find('ul').append($('<li></li>').attr('data-value', $option.val()).attr('data-display', display || null).addClass('option' + ($option.is(':selected') ? ' selected' : '') + ($option.is(':disabled') ? ' disabled' : '')).html($option.text()));
+                              });
+                            }
+
+                            /* Event listeners */
+
+                            // Unbind existing events in case that the plugin has been initialized before
+                            $(document).off('.nice_select');
+
+                            // Open/close
+                            $(document).on('click.nice_select', '.nice-select', function (event) {
+                              var $dropdown = $(this);
+
+                              $('.nice-select').not($dropdown).removeClass('open');
+                              $dropdown.toggleClass('open');
+
+                              if ($dropdown.hasClass('open')) {
+                                $dropdown.find('.option');
+                                $dropdown.find('.focus').removeClass('focus');
+                                $dropdown.find('.selected').addClass('focus');
+                              } else {
+                                $dropdown.focus();
+                              }
+                            });
+
+                            // Close when clicking outside
+                            $(document).on('click.nice_select', function (event) {
+                              if ($(event.target).closest('.nice-select').length === 0) {
+                                $('.nice-select').removeClass('open').find('.option');
+                              }
+                            });
+
+                            // Option click
+                            $(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function (event) {
+                              var $option = $(this);
+                              var $dropdown = $option.closest('.nice-select');
+
+                              $dropdown.find('.selected').removeClass('selected');
+                              $option.addClass('selected');
+
+                              var text = $option.data('display') || $option.text();
+                              $dropdown.find('.current').text(text);
+
+                              $dropdown.prev('select').val($option.data('value')).trigger('change');
+                            });
+
+                            // Keyboard events
+                            $(document).on('keydown.nice_select', '.nice-select', function (event) {
+                              var $dropdown = $(this);
+                              var $focused_option = $($dropdown.find('.focus') || $dropdown.find('.list .option.selected'));
+
+                              // Space or Enter
+                              if (event.keyCode == 32 || event.keyCode == 13) {
+                                if ($dropdown.hasClass('open')) {
+                                  $focused_option.trigger('click');
+                                } else {
+                                  $dropdown.trigger('click');
+                                }
+                                return false;
+                                // Down
+                              } else if (event.keyCode == 40) {
+                                if (!$dropdown.hasClass('open')) {
+                                  $dropdown.trigger('click');
+                                } else {
+                                  var $next = $focused_option.nextAll('.option:not(.disabled)').first();
+                                  if ($next.length > 0) {
+                                    $dropdown.find('.focus').removeClass('focus');
+                                    $next.addClass('focus');
+                                  }
+                                }
+                                return false;
+                                // Up
+                              } else if (event.keyCode == 38) {
+                                if (!$dropdown.hasClass('open')) {
+                                  $dropdown.trigger('click');
+                                } else {
+                                  var $prev = $focused_option.prevAll('.option:not(.disabled)').first();
+                                  if ($prev.length > 0) {
+                                    $dropdown.find('.focus').removeClass('focus');
+                                    $prev.addClass('focus');
+                                  }
+                                }
+                                return false;
+                                // Esc
+                              } else if (event.keyCode == 27) {
+                                if ($dropdown.hasClass('open')) {
+                                  $dropdown.trigger('click');
+                                }
+                                // Tab
+                              } else if (event.keyCode == 9) {
+                                if ($dropdown.hasClass('open')) {
+                                  return false;
+                                }
+                              }
+                            });
+
+                            // Detect CSS pointer-events support, for IE <= 10. From Modernizr.
+                            var style = document.createElement('a').style;
+                            style.cssText = 'pointer-events:auto';
+                            if (style.pointerEvents !== 'auto') {
+                              $('html').addClass('no-csspointerevents');
+                            }
+
+                            return this;
+                          };
+                        })(jQuery);
+                    $('.searchbar select').niceSelect();
+                }
+
+                function populate_dropdowns(data) {
+
+                    function populate_data(select, values) {
+                        var menu = $(select + "-select");
+                        var list = $(select + "-list");
+                        var display = list.first('li').attr('data-display');
+                        values.map(x => list.append($('<li>', {"data-value": x[0],text: x[1], "data-display": display, class: "option"})))
+                        values.map(x => menu.append($('<option>', {value: x[0],text: x[1]})))
+                    }
+
+                    populate_data("#dx-property", Array.from(data["names"], x => [x["val"], x["name"]]));
+                    populate_data("#dx-states", Array.from(data["states"], x => [x["abbrev"], x["name"]]));
+                    populate_data("#dx-metroArea", Array.from(data["metroAreas"], x => [x["name"], x["name"]]));
+                    populate_data("#dx-leasing", Array.from(data["agents"], x => [x["id"], x["name"]]));
+                    populate_data("#dx-tenants", Array.from(data["tenants"], x => [x["id"], x["name"]]));
+                    populate_data("#dx-gla", Array.from(Object.keys(data["gla"]), x => [data["gla"][x]["value"], data["gla"][x]["option"]]));
+                    populate_data("#dx-population", Array.from(Object.keys(data["population"]), x => [data["population"][x]["value"], data["population"][x]["option"]]));
+                    populate_data("#dx-income", Array.from(Object.keys(data["incomes"]), x => [data["incomes"][x]["value"], data["incomes"][x]["option"]]));
+
+                }
+
+                $.ajax({
+                    url: 'https://dlc.propertycapsule.com/property/output/find/browse/format:jsonp/callback:populate_dropdowns/',
+                    dataType: 'text',
+                    // complete: function(jXHR, status) {
+                    //     console.log(status);
+                    //     console.log(jXHR);
+                    // },
+                    success: function(data) {
+                        data = data.replace('populate_dropdowns(', '').replace(');', '');
+                        populate_dropdowns($.parseJSON(data));
+                    }
+                });
+
+                var updateSearch = function() {
+                    var appendToUrl;
+                    var newAppvars = {};
+
+                    if(typeof $(".pc-property-dx-property").val() !== 'undefined' && $(".pc-property-dx-property").val().length > 1) {
+                        window.location.href = 'https://dlc.propertycapsule.com/property/output/center/detail/id:' + $(".pc-property-dx-property").val() + '/';
+                        return;
+                    }
+
+                    var standardFilter = function(listName, fieldName) {
+                        var current = $(".pc-property-"+ listName).val();
+                        if (current.length > 1) {
+                            newAppvars[fieldName] = current;
+                        }
+                    };
+
+                      makeAppvars = function(args) {
+                          var coloned, key, value, colonedString;
+                          if (typeof args === "undefined") {
+                              args = {};
+                          }
+                          coloned = [];
+                          for (key in args) {
+                              if (Object.prototype.hasOwnProperty.call(args, key)) {
+                                  value = encodeURIComponent(encodeURIComponent(encodeURIComponent(args[key])));
+                                  coloned.push(""+key+":"+value);
+                              }
+                          }
+                          colonedString = coloned.join("/");
+                          if (colonedString.length > 0) {
+                              colonedString = colonedString+"/";
+                          }
+                          return colonedString;
+                      };
+
+                      standardFilter('dx-property', 'name');
+                      standardFilter('dx-state', 'state');
+                      standardFilter('dx-metroArea', 'metroArea');
+                      standardFilter('dx-agent', 'agent');
+                      standardFilter('dx-text', 'text');
+                      standardFilter('dx-tenant', 'tenants');
+                      standardFilter('dx-gla');
+                      standardFilter('dx-income');
+                      standardFilter('dx-population');
+
+                      if($(".pc-property-dx-sqft-min").val()) {
+                          newAppvars['sqft_min'] = $('.pc-property-dx-sqft-min').val();
+                      } else {
+                          if(newAppvars['sqft_min']) {
+                              delete newAppvars['sqft_min'];
+                          }
+                      }
+                      if($(".pc-property-dx-sqft-max").val()) {
+                          newAppvars['sqft_max'] = $('.pc-property-dx-sqft-max').val();
+                      } else {
+                          if(newAppvars['sqft_max']) {
+                              delete newAppvars['sqft_max'];
+                          }
+                      }
+                      if($('.pc-property-dx-avail').is(':checked')) {
+                          newAppvars["availabilities"] = 1;
+                      } else {
+                          delete newAppvars['availabilities'];
+                      }
+                      appendToUrl = makeAppvars(newAppvars);
+
+                      searchUrl = 'https://dlc.propertycapsule.com/property/output/find/search4/prevsearch:1/' + appendToUrl;
+
+                      window.location.href = searchUrl;
+
+                      return false;
+                };
+
+
+                $('#dx-search-submit-form-submit').click(updateSearch);
+
+                $(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function (event) {
+
+                    if (!$(this).parent().attr('class').includes('dx-')) {
+                        return true;
+                    }
+
+                    var $option = $(this);
+                    var $dropdown = $option.closest('.nice-select');
+
+                    $dropdown.find('.selected').removeClass('selected');
+                    $option.addClass('selected');
+
+                    var text = $option.data('display') || $option.text();
+                    $dropdown.find('.current').text(text);
+
+                    $dropdown.prev('select').val($option.data('value')).trigger('change');
+                      $("#dx-search-submit-form-submit").trigger('click');
+              });
+
+            }
+            if (window.jQuery) {
+                searchMain();
+            } else {
+                loadScript("https://code.jquery.com/jquery-2.2.4.min.js", searchMain);
+            }
+	})(jQuery);
+
+</script></div>
+
+      <main class="content">
+        <section class="hero-unit bg-media">
+          <div class="media-container">
+			            <div class="media" style="background-image: url('')"></div>
+          </div>
+          <div class="overlay"></div>
+          <div class="grid-container">
+            <div class="grid-x grid-margin-x align-left align-bottom">
+              <div class="cell small-11 medium-6">
+                <header class="component">
+                  <h1 class="headline">Test Property Josh</h1>
+                </header>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-block animate">
+          <div class="grid-container ">
+            <div class="main grid-x grid-margin-x align-center align-justify has-2-cols">
+              <div class="cell small-11 medium-6 large-7 i-1">
+                <div class="component default stack-order-1">
+                  <!-- content -->
+					                </div>
+
+                <header class="component detail">
+                  <h3 class="headline">Demographics</h3>
+                </header>
+
+                <div class="component table">
+
+				<div class="pc-demo" style="display:none;">Switch to landscape mode to view demographic data</div>
+                  <div class="responsive-table">
+                                                      </div>
+                </div>
+                <header class="detail component">
+                  <h3 class="headline">Documents</h3>
+                </header>
+                <div class="component documents">
+                                    </div>
+              </div>
+              <div class="cell small-11 medium-6 large-4 i-2">
+
+                <div class="component default card border-top-green">
+                  <h2>Property Highlights</h2>
+
+                  <p>
+                    <b>                      <br>311 4th ave                      <br>san diego, CA 92101</b>
+                  </p>
+                  <ul>
+					                    <li>
+                      <b>County:</b> San Diego</li>
+										                    <li>
+                      <b>Type:</b> Community</li>
+															                  </ul>
+
+
+                  <a href="http://dlc.development.propertycapsule.com/property/skins/assets/24/img/tenant_app.pdf" class="button" target="_blank">Tenancy Applications</a>
+
+                </div>
+
+
+                <div class="component card bg-blue">
+                  <h2>April Tschappat </h2>
+
+                  <p>
+                    <a href="mailto:atschappat@dlcmgmt.com" class="mail">
+					                      <strong>Email April</strong>
+                    </a>
+                  </p>
+                  <ul>
+					                    <li>
+                      <strong>Phone:</strong> 972.678.4939</li>
+										                    <li>
+                      <strong>Cell:</strong> 847.909.8143</li>
+										                  </ul>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-block property-visuals-template animate">
+          <div class="grid-container">
+            <div class="main grid-x grid-margin-x align-center">
+              <div class="cell small-11 medium-12">
+                <!-- foundation tabs -->
+                <div class="tabs-container">
+                  <ul class="tabs" data-tabs id="property-tabs">
+                    <li class="tabs-title is-active">
+                      <a data-tabs-target="panel1" href="#panel1" aria-selected="true">Site plan</a>
+                    </li>
+                    <li class="tabs-title">
+                      <a data-tabs-target="panel2" href="#panel2">Interactive Map</a>
+                    </li>
+                    <li class="tabs-title">
+                      <a data-tabs-target="panel3" href="#panel3">Photos</a>
+                    </li>
+                  </ul>
+                  <div class="tabs-content" data-tabs-content="property-tabs">
+
+
+                    <div class="tabs-panel is-active" id="panel1" style="position:relative;padding-bottom:25px; padding-top:56.25%;">
+						<div class="printable-plan"style="display:2inline-block;position:absolute;top:15px;left:25px;z-index:11;">
+        					<a
+        					    target="_blank"
+        					    href=""
+        					    class="print-property"
+        					>
+        					    Printable Version
+        					</a>
+						</div>
+
+
+						<a style="width:100%;height:100%;" href="http://dlc.development.propertycapsule.com/property/output/image/siteplan/id:/width:1000/height:1000/key:9ac2d60153591d57198b38dfbcd35eb6/" target="_blank">
+							<img id="static_plan" style="width:100%;height:100%; top:0px; display:none;" src="http://dlc.development.propertycapsule.com/property/output/image/siteplan/format:png/id:/width:1145/height:576/key:9d80883723241c7c93708f49266b2e60/pad:1/pad_color:none/trim:1/" />
+						</a>
+        				<iframe id="jsviewer" src="http://dlc.development.propertycapsule.com/property/output/center/jsviewer/id:3119/sitemap_ID:/height:636/" scrolling="no" frameborder="0" allowfullscreen="true"  style="width:100%;height:100%;position:absolute;top:0; left:0;"></iframe>
+                    </div>
+                    <div class="tabs-panel" id="panel2" style="position:relative;padding-bottom:25px; padding-top:56.25%;">
+						<iframe scrolling="no" id="bing3" name="bing" style="position:absolute; top:0px; left:0px;" src="http://dlc.development.propertycapsule.com/property/output/map/capsule/id:3119/" height="100%" frameborder="0" width="100%"></iframe>
+                    </div>
+                    <div class="tabs-panel" id="panel3">
+                      <div class="component gallery">
+                        <div class="inner">
+                          <div class="gallery-large" data-gallery-large>
+							                          </div>
+
+                          <div class="gallery-thumbs" data-gallery-thumbs>
+							                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<style>
+.hoveredSpace {
+    color: #0095ce !important;
+}
+</style>
+				       			                <div class="info is-active" data-tab-panel="panel1">
+                                                         <div class="level-maps info is-active" style="width:100%;">
+                                                                 <div class="legendTable" style="width:375px; margin:0 auto;">
+                                                                         <table style="width:100%;">
+                                                                                 <tr>
+                                                                                         <td style="width:20px;">
+                                                                                                 <div class="legendBoxAvail"></div>
+                                                                                         </td>
+                                                                                         <td>
+                                                                                                 <div class="legendTitle">Available</div>
+                                                                                         </td>
+                                                                                         <td style="width:20px;">
+                                                                                                 <div class="legendBoxComAvail"></div>
+                                                                                         </td>
+                                                                                         <td>
+                                                                                                 <div class="legendTitle">Coming Available</div>
+                                                                                         </td>
+                                                                                 </tr>
+                                                                         </table>
+                                                                 </div>
+							</div>
+
+    					
+                  <div class="grid-x grid-padding-x align-center list">
+
+                    <div class="cell small-11 medium-4">
+					                    </div>
+
+                    <div class="cell small-11 medium-4">
+                                        </div>
+
+                    <div class="cell small-11 medium-4">
+                                        </div>
+
+				</div>
+
+                  <div class="title">
+                    <span>current tenants</span>
+                  </div>
+       			
+                  <div class="grid-x grid-padding-x align-center list">
+
+                    <div class="cell small-11 medium-4">
+					                    </div>
+
+                    <div class="cell small-11 medium-4">
+                                        </div>
+
+                    <div class="cell small-11 medium-4">
+                                        </div>
+					</div>
+
+                </div>
+
+                <div class="info" data-tab-panel="panel2">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 medium-2 cell">
+                      <div class="title inline">
+                        <span>Options</span>
+                      </div>
+                    </div>
+                    <div class="cell auto">
+                      <form action="">
+                        <div class="checkbox">
+                          <label>
+                            <input data-mapname='capsule' type="checkbox" class="maptype" name="map[]" checked>
+                            <span></span>
+                            <em>Capsule map</em>
+                          </label>
+                        </div>
+
+                        <div class="checkbox">
+                          <label>
+                            <input  data-mapname='google' type="checkbox" class="maptype" name="map[]" >
+							</a>
+                            <span></span>
+                            <em>Google</em>
+                          </label>
+                        </div>
+
+                        <div  class="checkbox">
+                          <label>
+                            <input data-mapname='bing' class='maptype' type="checkbox" name="map[]">
+                            <span></span>
+                            <em>Bing</em>
+                          </label>
+                        </div>
+
+                        <div  class="checkbox">
+                          <label>
+                            <input data-mapname='streetview' class='maptype' type="checkbox" name="map[]">
+                            <span></span>
+                            <em>Streetview</em>
+                          </label>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center">
+            <div class="cell small-6 large-order-1 align-self-bottom">
+                                    <img class="recognition hide-for-large" src="http://2n7l0efo36m88r8z4bxraesz.wpengine.netdna-cdn.com/wp-content/uploads/2018/05/great-places-to-work.svg" alt="Great Places to Work" />
+                                <div class="site-footer-logo">
+                    <img src="http://2n7l0efo36m88r8z4bxraesz.wpengine.netdna-cdn.com/wp-content/uploads/2018/04/logo-white.svg" alt="DLC Management White Logo">
+                </div>
+            </div>
+
+            <div class="cell small-6  large-12 large-order-3 large-bottom">
+                <div class="grid-x align-justify align-middle">
+                    <div class="cell auto">
+                        <div class="grid-x">
+                            <div class="cell large-3 show-for-large">
+                            <ul class="site-footer-menu menu vertical"><li id="menu-item-515" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-515"><a href="http://www.dlcmgmt.com/">Home</a></li>
+<li id="menu-item-516" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-516"><a href="http://www.dlcmgmt.com/about/">About</a></li>
+<li id="menu-item-519" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-519"><a href="http://dlc.propertycapsule.com/">Properties</a></li>
+<li id="menu-item-518" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-518"><a href="http://www.dlcmgmt.com/what-we-do/">What We Do</a></li>
+<li id="menu-item-517" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-517"><a href="http://www.dlcmgmt.com/human-capital/">Human Capital</a></li>
+</ul>                           </div>
+
+                            <div class="cell large-3 flex-child-shrink">
+                                <ul class="site-footer-menu menu vertical">
+<li id="menu-item-1488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1488"><a style="padding-left:0;" href="https://www.dlcmgmt.com/news-media/">News &amp; Media</a></li>
+                                <ul class="site-footer-menu menu vertical"><li id="menu-item-522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a href="http://www.dlcmgmt.com/human-capital/careers/">Careers</a></li>
+<li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a href="http://www.dlcmgmt.com/contact/">Contact</a></li>
+<li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520"><a href="http://www.dlcmgmt.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-521" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-521"><a href="http://www.dlcmgmt.com/terms-of-service/">Terms of Service</a></li>
+</ul>                           </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cell medium-shrink show-for-large">
+                                                    <a href="http://reviews.greatplacetowork.com/dlc-management-corp" target="_blank">
+                                                <img class="recognition" src="http://2n7l0efo36m88r8z4bxraesz.wpengine.netdna-cdn.com/wp-content/uploads/2018/05/great-places-to-work.svg" alt="Great Places to Work" />
+                                                    </a>
+                                            </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="cell small-12 medium-6 hide-for-large medium-bottom small-order-4 medium-order-3">
+                <div class="site-footer-copyright">
+                    <p style="text-align: center;">Copyright @ 2018 &#8211; DLC Management Corp. <span class="clear-on-mobile">All Rights Reserved.</span></p>
+                </div>
+            </div>
+
+
+
+                    <div class="cell small-12 medium-6 large-6 large-order-2 small-bottom medium-bottom medium-order-4">
+                        <ul class="socials">
+                                                        <li>
+                                <a href="https://twitter.com/DLCManagement" target="_blank">
+                                    <img src="http://2n7l0efo36m88r8z4bxraesz.wpengine.netdna-cdn.com/wp-content/themes/dlc2018/dist/images/twitter.svg" alt="Twitter">
+                                </a>
+                            </li>
+                                                                                    <li>
+                                <a href="https://www.facebook.com/DLCManagement/" target="_blank">
+                                    <img src="http://2n7l0efo36m88r8z4bxraesz.wpengine.netdna-cdn.com/wp-content/themes/dlc2018/dist/images/facebook.svg" alt="Facebook">
+                                </a>
+                            </li>
+                                                                                    <li>
+                                <a href="https://www.linkedin.com/company/dlc-management-corp/" target="_blank">
+                                    <img src="http://2n7l0efo36m88r8z4bxraesz.wpengine.netdna-cdn.com/wp-content/themes/dlc2018/dist/images/linkedin.svg" alt="Linkedin">
+                                </a>
+                            </li>
+                                                    </ul>
+                    </div>
+                        </div>
+    </div>
+
+
+    <div class="show-for-large">
+        <div class="site-footer-copyright">
+            <p style="text-align: center;">Copyright @ 2018 &#8211; DLC Management Corp. <span class="clear-on-mobile">All Rights Reserved.</span></p>
+        </div>
+    </div>
+
+
+</footer>   </div>
+  </div>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+            <script type='text/javascript' src="http://dlc.development.propertycapsule.com/property/3rd_party/underscore/underscore.js"></script>
+                    <script>
+                $(document).ready(function() {
+                    //    $('#bing3').css('height', $('#panel2').height());
+                    //    $('#bing3').css('width', $('#panel2').width());
+                    $(window).on('resize', _.debounce(function() {
+                        $('#bing3').css('height', $('.tabs-content').height());
+                        $('#bing3').css('width', $('.tabs-content').width());
+                    }, 150));
+
+                        $("#panel2-label").on("click", function() {
+                            $("#bing3").width($(".tabs-content").width());
+                            $("#bing3").height($(".tabs-content").height());
+                            $('#bing3').attr('src', $('#bing3').attr('src'));
+                        });
+
+                        $("body input.maptype").on("click", function() {
+                            var mapName = $(this).data('mapname');
+                            console.log(mapName);
+                            switch(mapName) {
+                            case 'capsule':
+                                $("#bing3").attr("src",  "http://dlc.development.propertycapsule.com/property/output/map/capsule/id:3119/");
+                                break;
+                            case 'bing':
+                                $("#bing3").attr("src",  "http://dlc.development.propertycapsule.com/property/output/map/bing/id:3119/");
+                                break;
+                            case 'google':
+                                $("#bing3").attr("src",  "http://dlc.development.propertycapsule.com/property/output/map/google/id:3119/");
+                                break;
+                            case 'streetview':
+                                $("#bing3").attr("src",  "http://dlc.development.propertycapsule.com/property/output/map/streetview/id:3119/");
+                                break;
+                            default:
+                                $("#bing3").attr("src",  "http://dlc.development.propertycapsule.com/property/output/map/capsule/id:3119/");
+                                break;
+                            }
+                        });
+                    $("#sitemap-toggle").on("change", function() {
+                        var params = $("#sitemap-toggle").find(":selected").val();
+                        var sid = $("#sitemap-toggle").find(":selected").data('sid');
+                        var newPlanUrl = 'http://dlc.development.propertycapsule.com/property/output/center/jsviewer/0:id/1:3119//sitemap_ID:' + sid;
+                        $("#jsviewer").attr('src',newPlanUrl);
+                        $("#tenant-list").load('http://dlc.development.propertycapsule.com/property/output/center/detail/' + params +'/' +  ' #tenant-list');
+                    });
+    $('body').resize(function(){
+        var width = $('.content').width() - 26
+        $('#jsviewer').css('margin-left', "-20px");
+        $('#jsviewer').width(width);
+        $('#jsviewer').height(width/1.85);
+    })
+    $(".highlightJS").click(function(){
+        var spaceId = $(this).data('spaceid');
+        document.getElementById('jsviewer').contentWindow.PlanWidget.publicAPI.selectSpaces(spaceId);
+    });
+    $(".highlightJS").mouseover(function(){
+        var spaceId = $(this).data('spaceid');
+        var s = spaceId.toString();
+        document.getElementById('jsviewer').contentWindow.PlanWidget.publicAPI.highlightSpaces(s);
+        $(this).addClass('hoveredSpace');
+    });
+    $(".highlightJS").mouseout(function(){
+        var spaceId = $(this).data('spaceid');
+        var s = spaceId.toString();
+        document.getElementById('jsviewer').contentWindow.PlanWidget.publicAPI.clearHighlightSpaces(s);
+        $(this).removeClass('hoveredSpace');
+    });
+
+
+    $(window).on('resize', _.debounce(function() {
+        console.log('doing it');
+            //$('#jsviewer').css('height', $("#panel1").height() -10);
+       // if($(window).width() > 1023) {
+       //     $('#html_viewer').css('height', 774);
+       //     $('#html_viewer').css('width', 'calc(100% - 300px)');
+       //     $('#jsviewer').css('width', $('#html_viewer').width() - 10);
+       //     $('#jsviewer').css('height', 774);
+       //     $('#site_plan_map_garbage').css('height', 774);
+       // } else if($(window).width() > 519) {
+       //     $('#html_viewer').css('width', '100%');
+       //     $('#jsviewer').css('width', $('#html_viewer').width() - 10);
+       //     $('#html_viewer').css('height', 500);
+       //     $('#jsviewer').css('height', 500);
+       //     $('#site_plan_map_garbage').css('height', 500);
+       // } else {
+       //     $('.property_detail_body').css('width', 'calc(100% - 10px)');
+       //     $('.property_detail_body_content').css('width', '100%');
+       //     $('#html_viewer').css('width', '100%');
+       //     $('#jsviewer').css('width', $('#html_viewer').width());
+       //     $('#html_viewer').css('height', 250);
+       //     $('#jsviewer').css('height', 250);
+       //     $('#site_plan_map_garbage').css('height', 250);
+       //     $('#agent-contact-iframe').css('width', 300);
+       //     $('.content').css('width', 300);
+       // }
+    }, 150));
+
+
+
+
+});
+</script>
+
+                      <script type='text/javascript'>
+                          window.__NOINCJQUERY__ = window.jQuery;
+                      </script>
+  <script src="http://dlc.development.propertycapsule.com/property/skins/assets/24/js/app.js"></script>
+  <script src="http://dlc.development.propertycapsule.com/property/skins/assets/24/js-separate/dataTables.js"></script>
+  <script src="http://dlc.development.propertycapsule.com/property/skins/assets/24/js-separate/dlcDataTable.js"></script>
+                      <script type='text/javascript'>
+                      window.jQuery = window.__NOINCJQUERY__;
+                      window.$ = window.__NOINCJQUERY__;
+</script>
+
+</body>
+
+</html>
