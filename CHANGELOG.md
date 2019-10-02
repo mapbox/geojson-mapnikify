@@ -1,5 +1,9 @@
 ## changelog
 
+## 2.1.1
+
+- Update agentkeepalive dependency to v4.0.2. This will prevent this._evictSession error
+
 ## 2.1.0
 
 - Throw error with description if url marker is too large.
