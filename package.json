@@ -32,8 +32,8 @@
     "@mapbox/makizushi": "^3.0.1",
     "agentkeepalive": "^4.0.2",
     "minimist": "~1.2.0",
+    "needle": "^2.4.0",
     "queue-async": "~1.0.7",
-    "request": "~2.78.0",
     "sigmund": "~1.0.0",
     "xtend": "~4.0.0"
   },

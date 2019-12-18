@@ -7,7 +7,7 @@ var test = require('tape'),
     mapnik = require('mapnik'),
     cachepath = require('../lib/cachepath.js'),
     urlmarker = require('../lib/urlmarker.js'),
-    request = require('request'),
+    needle = require('needle'),
     generatexml = require('../');
 
 mapnik.register_default_input_plugins();
@@ -142,7 +142,7 @@ test('urlmarker-jpg', function(t) {
 });
 
 test('urlmarker-custom-client', function(t) {
-    var client = request.defaults({ timeout: 100, encoding: 'binary' });
+    var client = needle.defaults({ response_timeout: 100 });
     var file = fs.readFileSync(path.resolve(__dirname, 'data', 'rocket.png'));
     var scope = nock('http://devnull.mapnik.org')
         .get(/.*/)
@@ -156,7 +156,7 @@ test('urlmarker-custom-client', function(t) {
         }
     }, function(err, res) {
             t.equal(err.message, 'Unable to load marker from URL.');
-            t.equal(err.originalError.code, 'ESOCKETTIMEDOUT');
+            t.equal(err.originalError.code, 'ECONNRESET');
             generatexml.setRequestClient(null);
             nock.cleanAll();
             t.end();
@@ -164,7 +164,7 @@ test('urlmarker-custom-client', function(t) {
 });
 
 test('urlmarker-too-large-custom-client', function(t) {
-    var client = request.defaults({ timeout: 100, encoding: 'binary' });
+    var client = needle.defaults({ timeout: 100 });
     var file = fs.readFileSync(path.resolve(__dirname, 'data', 'html-page.png'));
     var scope = nock('http://devnull.mapnik.org')
         .get(/.*/)
