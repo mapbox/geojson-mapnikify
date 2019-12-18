@@ -1,8 +1,13 @@
 ## changelog
 
+## Unreleased
+
+- Node 10 support
+- Swaps request with needle
+
 ## 2.1.1
 
-- Update agentkeepalive dependency to v4.0.2. This will prevent this._evictSession error
+- Update agentkeepalive dependency to v4.0.2. This will prevent this._evictSession error_
 
 ## 2.1.0
 
