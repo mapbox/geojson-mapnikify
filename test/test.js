@@ -164,7 +164,7 @@ test('urlmarker-custom-client', function(t) {
 });
 
 test('urlmarker-too-large-custom-client', function(t) {
-    var client = needle.defaults({ timeout: 100 });
+    var client = needle.defaults({ response_timeout: 100 });
     var file = fs.readFileSync(path.resolve(__dirname, 'data', 'html-page.png'));
     var scope = nock('http://devnull.mapnik.org')
         .get(/.*/)
