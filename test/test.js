@@ -186,7 +186,7 @@ test('urlmarker-too-large-custom-client', function(t) {
 // ensure generatexml.setRequestClient(null) returns to default client
 test('urlmarker-uncustomize-client', function(t) {
     var file = fs.readFileSync(path.resolve(__dirname, 'data', 'rocket.png'));
-    var scope = nock('http://devnull.mapnik.org', { reqheaders: {'accept-encoding': 'binary'}})
+    var scope = nock('http://devnull.mapnik.org')
         .get(/.*/)
         .delay(300)
         .reply(200, file, { 'content-type': 'image/png' });
