@@ -47,7 +47,7 @@ Transform GeoJSON into Mapnik XML.
 
 If your GeoJSON object has one or more features with a `marker-url` property, `mapnikify()` will write the images found at the url into a file in a temporary directory and use that path in the Mapnik XML. This uses the [needle library](https://www.npmjs.com/package/needle) to handle the http file fetching.
 
-By default the request will attempt to fetch binary data from the specified url. If the url is `http` and not `https` , Mapnikify will use [agentkeepalive](https://www.npmjs.com/package/agentkeepalive) to speed up requesting multiple images. There is also a default timeout of 5 seconds.
+By default the request will attempt to fetch binary data from the specified url. Mapnikify will use [agentkeepalive](https://www.npmjs.com/package/agentkeepalive) to speed up requesting multiple images. There is also a default timeout of 5 seconds.
 
 You can customize the defaults passed to `needle()` . Simply set a custom wrapper defined with `needle.defaults` . See [needle's documentation on defaults](https://www.npmjs.com/package/needle#overriding-defaults) for more information. For a quick example, this will set a longer timeout:
 
