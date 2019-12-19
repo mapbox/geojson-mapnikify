@@ -1,13 +1,14 @@
 ## changelog
 
-## Unreleased
+## 3.0.0
 
 - Node 10 support
-- Swaps request with needle
+- Swaps request with needle (may cause breaking changes if you use a custom client to customize request options)
+- Uses agentkeepalive for all requests
 
 ## 2.1.1
 
-- Update agentkeepalive dependency to v4.0.2. This will prevent this._evictSession error_
+- Update agentkeepalive dependency to v4.0.2. This will prevent this. _evictSession error_
 
 ## 2.1.0
 
