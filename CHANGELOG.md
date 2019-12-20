@@ -2,12 +2,13 @@
 
 ## 3.0.1
 - Allows up to one redirect for requests by default
+- Allows either http or https requests for agent
 
 ## 3.0.0
 
 - Node 10 support
 - Swaps request with needle (may cause breaking changes if you use a custom client to customize request options)
-- Uses agentkeepalive for all requests
+- Uses agentkeepalive (https) for all requests
 
 ## 2.1.1
 
