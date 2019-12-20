@@ -1,7 +1,6 @@
 ## changelog
 
 ## 3.0.1
-- Configures agent to use http or https depending on request
 - Allows up to one redirect for requests by default
 
 ## 3.0.0
