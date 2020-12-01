@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/mapbox/geojson-mapnikify.svg)](https://travis-ci.org/mapbox/geojson-mapnikify) [![Coverage Status](https://coveralls.io/repos/mapbox/geojson-mapnikify/badge.png)](https://coveralls.io/r/mapbox/geojson-mapnikify) [![Code Climate](https://codeclimate.com/github/mapbox/geojson-mapnikify/badges/gpa.svg)](https://codeclimate.com/github/mapbox/geojson-mapnikify)
+[![Build Status](https://travis-ci.com/mapbox/geojson-mapnikify.svg?branch=master)](https://travis-ci.com/mapbox/geojson-mapnikify)
+[![Coverage Status](https://coveralls.io/repos/mapbox/geojson-mapnikify/badge.png)](https://coveralls.io/r/mapbox/geojson-mapnikify)
+[![Code Climate](https://codeclimate.com/github/mapbox/geojson-mapnikify/badges/gpa.svg)](https://codeclimate.com/github/mapbox/geojson-mapnikify)
 
 # geojson-mapnikify
 
